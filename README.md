@@ -23,15 +23,16 @@ Treat the setup as a house of cards!
 
 The first approach is outlined in the code listing below.
 It creates one Anaconda environment for using both PyMOL and CCTBX.
-This approach allows using the default Python3 kernel in Jupyter and eliminates the need to switch between kernels in one notebook.
-The protocol worked on a new instance on Ubuntu 20.04, but it failed on a well-worn instance of MacOS 10.15.7
-(conda create -n pc38 schrodinger::pymol conda-forge::cctbx-base schrodinger::tk conda-forge::nodejs conda-forge::jupyter conda-forge::jupyterlab)
-After updating the existing software and installing Node.js and git, a software subdirectory is created for temporary storage of the the snippet libraries.
-The libraries are downloaded into with the `git clone` command.
-Next, the appropriate Anaconda installation script is downloaded and moved to the home directory where it is run to set up and install Anaconda3.
-Next, one conda command with a long argument list is run to install pymol, cctbx, jupyter, and python3.7 while creating a Anaconda environment named `pc37`.
-The environment name is shorthand for pymol-cctbx-python3.7.
-The shorthand name reduces the typing required when using this environment.
+This approach uses one kernel in Jupyter.
+It eliminates the need to switch between kernels in one notebook.
+The protocol worked on a new instance on Ubuntu 20.04.
+It also works on Mac OSX, although I had to move my `/usr/local/include` directory to avoid conflicts. 
+First, update the existing software on Ubuntu and install Node.js and git.
+Next, download the appropriate Anaconda installation script.
+This script is run int the home directory to install Anaconda locally.
+One conda command with a long argument list is run to install juptyer, pymol, and cctbx.
+Here, the environment name pc37 represents pymol-cctbx-python3.7.
+The shorthand name for the environment reduces the typing required when using this environment.
 
 ```bash
 apt install nodejs git
@@ -55,6 +56,9 @@ git clone https://github.com/MooersLab/juptyerlabpymolpysnips.git pymol
 git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
 jupyter lab # or libtbx.python -m jupyter-lab
 ```
+
+(conda create -n pc38 schrodinger::pymol conda-forge::cctbx-base schrodinger::tk conda-forge::nodejs conda-forge::jupyter conda-forge::jupyterlab)
+
 
 This new environment is activated, and JupyterLab is installed with the conda command.
 The pip command is then used to install the extension jupyterlab-snippets-multimenus from PyPi.
