@@ -57,17 +57,16 @@ git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
 jupyter lab # or libtbx.python -m jupyter-lab
 ```
 
-(conda create -n pc38 schrodinger::pymol conda-forge::cctbx-base schrodinger::tk conda-forge::nodejs conda-forge::jupyter conda-forge::jupyterlab)
-
-
 This new environment is activated, and JupyterLab is installed with the conda command.
-The pip command is then used to install the extension jupyterlab-snippets-multimenus from PyPi.
-The activation of this extension requires that JupyterLab is rebuilt.
+The pip command is used to install the extension jupyterlab-snippets-multimenus from PyPi.
+JuptyerLab is a server extension for Juptyer Notebook.
+It may need to be activated.
+Activation of the extension requires that JupyterLab is rebuilt.
 
 The `jupyter --path` command returns a list of paths that vary between operating systems.
 The top path listed under Data is where the snippet libraries are stored.
 This path varies with operating system.
-Next, navigate to this direcotry and create the subdirectory `multimenus\_snippets`.
+Next, navigate to this direcory and create the subdirectory `multimenus_snippets`.
 Then git clone the repositories of interest. 
 The `+` versions are annotated with guides for editing the snippets.
 These will become a hindrance for experienced users.  
@@ -77,22 +76,26 @@ No error messages should appear in the terminal.
 The menu bar should contain the items `cctbx`, `cctbx+`, `pymol` and `pymol+`.
 The bash alias command `alias pcJL='conda activate pc37 && juptyer lab'` can reduce subsequent typing.
 If there are irresolvable error messages, the broken environment can be removed with the command `conda env remove --name pc37`.
-This first protocol has the upside using one kernel to call cctbx and pymol and the downside of possible  disruptions by updates to either PyMOL or CCTBX.
+This first protocol has the upside of using one kernel to call cctbx and pymol and the downside of possible  disruptions by updates to either PyMOL or CCTBX.
 
-The approval protocol can be adapted to Mac OS X with the appropriate changes in the name of Anaconda install script and changes in the paths.
+The above protocol can be adapted to Mac OS X with the appropriate changes in the name of the Anaconda install script and changes in the paths.
 If Node.js is missing, it can be installed with Anaconda or Home Brew. 
+Node.js must of a version greater than 10.0.0 (e.g., conda install conda-forge::nodejs=15.3). 
+Anaconda will sometime degrade Node.js to version 6.
 
 
 ### Pymol and cctbx with separate Python interpreters from Anaconda
 
-
-The second protocol creates a new conda environment for CCTBX but not PyMOL.
+This second protocol creates a new conda environment for CCTBX and uses an existing installation of PyMOL.
 The upside of this approach is that updates to one program will not break the other program.
-Separate kernels are created for CCTBX and for the PyMOL.app installed in the standard location.
-The downsides of this approach are that it will necessitate not calling pymol and cctbx in the same cell and switching kernels when calling each program.
+JuptyerLab is installed in both the cctbx environment and again in PyMOL.
+Separate kernels are created for CCTBX and for the Python interpreter in the PyMOL.app.
+PyMOL and  CCTBX cannot be called from the same cell.
+Also, the kernel has to be switched when changing programs.
+The name  `cctbx37` is desgined to track the Python version used to create the environment. 
+Create a Juptyer kernel also named cctbx37.
 
-Name the new environment `cctbx37` is desgined to track the Python version used to create the environment. 
-Ccreate a kernel named cctbx37 via the command `ipython kernel install --name cctbx37 --user`.
+
 With PyMOL installed in the usual location via its installer, open PyMOL and install Jupyter inside it with the command `conda install -c conda-forge jupyter -y` entered at the PyMOL prompt.
 The install can be slow and the PyMOL prompt may appeaer to hang.
 Give it several minutes to complete.
@@ -107,47 +110,11 @@ Download and move the snippet libraries into place as above.
 conda create -n cctbx37 python=3.7 conda-forge::cctbx-base conda-forge::jupyter 
 conda install conda-forge::jupyterlab=2.2.0
 ipython kernel install --name cctbx37 --user
-/Applications/PyMOL.app/Contents/bin/jupyter serverextension enable --py jupyterlab --user
-/Applications/PyMOL.app/Contents/bin/pip install jupyterlab-snippets-multimenus
-/Applications/PyMOL.app/Contents/binjupyter lab build
-/Applications/PyMOL.app/Contents/binjupyter lab clean
-/Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol --user
-/Applications/PyMOL.app/Contents/bin/jupyter --path # select the top option under Data for storing the libraries
-cd ~.local/share/jupyter # change as per output from prior line
-mkdir multimenus_snippets
-cd multimenus_snippets
-git clone https://github.com/MooersLab/juptyerlabpymolcctbx.git cctbx
-git clone https://github.com/MooersLab/juptyerlabpymolcctbxplus.git cctbx+
-git clone https://github.com/MooersLab/juptyerlabpymolpysnips.git pymol
-git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
-/Applications/PyMOL.app/Contents/bin/jupyter lab # or jupyter-lab
-```
 
-After starting JuptyerLab, select even the `pymol` kernel or the ``
+# Inside PyMOL, paste the following at the command prompt
+conda install conda-forge::jupyter conda-forge::jupyterlab=2.2.0 -y
 
-
-
-
-### Install cctbx inside of PyMOL
-
-The third protocol uses the conda that ships with PyMOL; it does not require the creation of a new environment.
-Open PyMOL and then install with separate conda commands jupyter, jupyter-lab, and then cctbx-base.
-From the terminal as described above, create a pymol kernel named pymol2.4.1 to distinguish from subsequent installations of PyMOL:
-/Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol2.4.1 --user
-Install the extension with the command '/Applications/PyMOL.app/Contents/bin/python -m pip install jupyterlab-snippets-multimenus'.
-Rebuild JuptyerLab with the command '/Applications/PyMOL.app/Contents/bin/juptyer-lab build'.
-Then launch the JupyterLab with the command '/Applications/PyMOL.app/Contents/bin/jupyter-lab'.
-To ease running this install of JupyterLab, add the following bash alias command to the standard location (e.g., .bashrc or .bashAliases): `alias pJL='/Applications/PyMOL.app/Contents/bin/jupyter-lab'`.
-Download and move the snippet libraries into place as above.
-The upside of this approach is that CCTBX can be called while using the PyMOL kernel, so there is no need to switch kernels.
-The downsides are that this approach may be fragile to updates of either PyMOL or CCTBX.
-Prior to updating PyMOL by using the package installer, the old version of the application should be renamed to avoid overwriting it.
-
-```bash
-# At the PyMOL prompt in the PyMOL GUI paste the following:
-conda install conda-forge::cctbx-base conda-forge::jupyter 
-conda install conda-forge::jupyterlab=2.2.0
-# In a terminal
+# Inside PyMOL, paste the following at the command prompt
 /Applications/PyMOL.app/Contents/bin/jupyter serverextension enable --py jupyterlab --user
 /Applications/PyMOL.app/Contents/bin/pip install jupyterlab-snippets-multimenus
 /Applications/PyMOL.app/Contents/bin/jupyter lab build
@@ -161,14 +128,58 @@ git clone https://github.com/MooersLab/juptyerlabpymolcctbx.git cctbx
 git clone https://github.com/MooersLab/juptyerlabpymolcctbxplus.git cctbx+
 git clone https://github.com/MooersLab/juptyerlabpymolpysnips.git pymol
 git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
+/Applications/PyMOL.app/Contents/bin/jupyter lab 
+```
+
+After starting JuptyerLab, select either the `pymol` kernel or the `cctbx37`
+
+
+### Install cctbx inside of PyMOL
+
+The third protocol uses the conda that ships with PyMOL; it does not require an separate Anaconda installation.
+This protocol assumes that git is already installed.
+Open PyMOL and then install with separate conda commands jupyter, jupyter-lab, and then cctbx-base.
+The subsequent commands issued from the terminal.
+Adjust the path to the PyMOL.app as needed.
+Enalbe the JupyterLab severer extension.
+Create a Juptyer kernel named `pymol`.
+Install the JuptyerLab extension with pip.
+Rebuild JuptyerLab and install the snippets via git clone.
+Launch the JupyterLab with the command '/Applications/PyMOL.app/Contents/bin/jupyter-lab'.
+To ease running this install of JupyterLab, add the following bash alias command to the standard location (e.g., .bashrc or .bashAliases): `alias pJL='/Applications/PyMOL.app/Contents/bin/jupyter-lab'`.
+
+```bash
+# At the PyMOL prompt in the PyMOL GUI paste the following:
+conda install conda-forge::cctbx-base conda-forge::jupyter 
+conda install conda-forge::jupyterlab=2.2.0
+conda install conda-forge::cctbx-base
+# In a terminal
+/Applications/PyMOL.app/Contents/bin/jupyter serverextension enable --py jupyterlab --user
+/Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol --user
+/Applications/PyMOL.app/Contents/bin/pip install jupyterlab-snippets-multimenus
+/Applications/PyMOL.app/Contents/bin/jupyter lab build
+/Applications/PyMOL.app/Contents/bin/jupyter lab clean
+/Applications/PyMOL.app/Contents/bin/jupyter --path # select the top option under Data for storing the libraries
+cd ~.local/share/jupyter # change as per output from prior line
+mkdir multimenus_snippets
+cd multimenus_snippets
+git clone https://github.com/MooersLab/juptyerlabpymolcctbx.git cctbx
+git clone https://github.com/MooersLab/juptyerlabpymolcctbxplus.git cctbx+
+git clone https://github.com/MooersLab/juptyerlabpymolpysnips.git pymol
+git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
 /Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol37 --user
 ```
 
+The upside of this approach is that CCTBX can be called while using the PyMOL kernel, so there is no need to switch kernels.
+The downsides are that this approach may be fragile to updates of either PyMOL or CCTBX.
+Prior to updating PyMOL by using the package installer, the old version of the application should be renamed to avoid overwriting it.
+Appending the version number (e.g., PyMOL241.app) will not impede its operation.
 
-### Install PyMOL wheel with python interpreter used to install cctbx (Windows)
+### Install PyMOL wheel with the Python interpreter used to install cctbx (Windows)
 
-A fourth protocol is restricted Windows.
-Wheel files for installing PyMOL are available for download (https://www.lfd.uci.edu/~gohlke/pythonlibs/\#pymol-open-source).
+A fourth protocol is restricted to Windows.
+Wheel files for installing PyMOL are available for [download](https://www.lfd.uci.edu/~gohlke/pythonlibs/\#pymol-open-source).
+Determine the version of Python already present and the whether the operating system is 32 or 64 bit.
 The Python interpreter used to run CCTBX can also be used to install the pymol with the `pip.exe install` command. 
 Both cctbx and pymol will share the same Python interpreter.
 Conda or pip.exe can then be used to install jupyter and then juptyerlab. 
@@ -198,7 +209,7 @@ Supplement this protocol with the following commands.
 /usr/local/miniconda3/bin/pip install jupyterlab-snippets-multimenus
 /usr/local/miniconda3/bin/ipython kernel install --name pymolcctbx --user
 /usr/local/miniconda3/bin/jupyter --path
-cd ~.local/share/jupyter # change as per output from prior line
+cd ~.local/share/jupyter # change as per Data line in output from prior comment
 mkdir multimenus_snippets
 cd multimenus_snippets
 git clone https://github.com/MooersLab/juptyerlabpymolcctbx.git cctbx
@@ -217,8 +228,7 @@ To quickly verify that PyMOL and CCTBX can be called in Jupyter from the same no
 Select the appropriate kernel.
 Enter in the first cell `from pymol import cmd`.
 No error message should appear.
-The cmd class will be the chief means of interacting with PyMOL.
-Enter in the next cell `import mmtbx.model`.
+Enter in the next cell `from map_model_manager import map_model_manager`.
 This command will import the model class of the mmtbx module.
 No errors should be returned by this operation if all is installed correctly.
 
