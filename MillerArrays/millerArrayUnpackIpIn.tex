@@ -1,0 +1,13 @@
+Iobs = miller_arrays[1]
+i_plus, i_minus = Iobs.hemispheres_acentrics()
+ipd = i_plus.data()
+ip=list(ipd)
+imd = i_minus.data()
+im = list(imd)
+len(im)
+Iobs.show_summary()
+print(Iobs.info())
+print(Iobs.observation_type())
+# Description:  Unpack into I(+) and I(-)
+# Source:  NA
+
