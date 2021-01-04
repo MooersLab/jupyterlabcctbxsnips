@@ -82,5 +82,74 @@ The install can be slow.
 Next, create a kernel named `pymol2.4.1` by entering in the terminal the following command that contains the path to the Ipython executable inside of the PyMOL.app: `/Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol37 --user`.
 Download and move the snippet libraries into place as above.
 
+```bash
 
+
+/Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol37 --user
+```
+
+### 
+
+The third protocol uses the conda that ships with PyMOL; it does not require the creation of a new environment.
+Open PyMOL and then install with separate conda commands nodejs, jupyter, jupyter-lab, and then cctbx-base.
+From the terminal as described above, create a pymol kernel named pymol2.4.1 to distinguish from subsequent installations of PyMOL:
+/Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol2.4.1 --user
+Install the extension with the command '/Applications/PyMOL.app/Contents/bin/python -m pip install jupyterlab-snippets-multimenus'.
+Rebuild JuptyerLab with the command '/Applications/PyMOL.app/Contents/bin/juptyer-lab build'.
+Then launch the JupyterLab with the command '/Applications/PyMOL.app/Contents/bin/jupyter-lab'.
+To ease running this install of JupyterLab, add the following bash alias command to the standard location (e.g., .bashrc or .bashAliases): `alias pJL='/Applications/PyMOL.app/Contents/bin/jupyter-lab'`.
+Download and move the snippet libraries into place as above.
+The upside of this approach is that CCTBX can be called while using the PyMOL kernel, so there is no need to switch kernels.
+The downsides are that this approach may be fragile to updates of either PyMOL or CCTBX.
+Prior to updating PyMOL by using the package installer, the old version of the application should be renamed to avoid overwriting it.
+
+```bash
+
+
+/Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol37 --user
+```
+
+
+### 
+
+A fourth protocol is restricted Windows.
+Wheel files for installing PyMOL are available for download (https://www.lfd.uci.edu/~gohlke/pythonlibs/\#pymol-open-source).
+The Python interpreter used to run CCTBX can also be used to install the pymol with the `pip.exe install` command. 
+Both cctbx and pymol will share the same Python interpreter.
+Conda or pip.exe can then be used to install jupyter and then juptyerlab. 
+Then pip.exe would be used to install jupyterlab-snippets-multimenus as above.
+
+
+
+```bash
+
+
+/Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol37 --user
+```
+
+
+###  
+
+
+```bash
+
+
+/Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol37 --user
+```
+
+
+
+
+## Quick check of the installation
+
+
+To quickly verify that PyMOL and CCTBX can be called in Jupyter from the same notebook, launch JupyterLab and open a new notebook.
+Select the appropriate kernel.
+Enter in the first cell `from pymol import cmd`.
+No error message should appear.
+The cmd class will be the chief means of interacting with PyMOL.
+Enter in the next cell `import mmtbx.model`.
+
+This command will import the model class of the mmtbx module.
+No errors should be returned by this operation if all is installed correctly.
 
