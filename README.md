@@ -1,7 +1,20 @@
 # jupyterlabcctbxsnips
 
+This readme file serves this GitHub site and three others: 
 
-## Installation of pymol, cctbx, and jupyter 
+
+## Introduction
+The PyMOL is a popular molecular graphics program, CCTBX is the computational crystallography toolbox, and JuptyerLab is a Integrated Development Environment (IDE) for editing Jupyter Notebooks.
+These electronic notebooks are useful for exploring new software, writing tutorials, and documenting computational work.
+The purpose of this site is to prompt the use of PyMOL and CCTBX together in Juptyer Notebooks.
+The comptuational work is supported by snippet libraries for PyMOL and CCTBX that depend on the jupyterlab-snippets-multimenus extension.
+
+The first section below describes five ways to install these three pacakges so that they can play together.
+There may be more ways. 
+Please post an issue if you want to share another way.
+Please post an issue if one of the ways below changes.
+
+## Five ways to install of PyMOL, CCTBX, and Jupyter 
 
 The installation of both CCTBX, PyMOL, and Jupyter can accomplished by one of several approaches.
 All three packages are complex and best kept isolated in a dedicated environment.
@@ -14,12 +27,13 @@ Running the command to enable the serverextension solves this problem.
 The `jupyterlab-snippets-multimenus` is not compatable with JuptyerLab 3.0.0 so an old version has to be installed.
 
 If the interpretable error messages have been addressed and there is still trouble, try another approach.
-Once a setup is working, do not to tinker with it by adding new extensions or upgrading the packages.
-All too often dependency conflicts will emerge.
-Treat the setup as a house of cards!
+Once a setup is working, **Do NOT!** tinker with it by adding new extensions or upgrading the packages.
+All too often conflicts between dependent software will emerge and break the set up.
+If it is not broken, do not try to fix it.
 
 
-### Pymol and cctbx share a Python interpreter from Anaconda
+
+### PyMOL and CCTBX share a Python interpreter from Anaconda
 
 The first approach is outlined in the code listing below.
 It creates one Anaconda environment for using both PyMOL and CCTBX.
@@ -84,7 +98,7 @@ Node.js must of a version greater than 10.0.0 (e.g., conda install conda-forge::
 Anaconda will sometime degrade Node.js to version 6.
 
 
-### Pymol and cctbx with separate Python interpreters from Anaconda
+### PyMOL and CCTBX have separate Python interpreters from Anaconda
 
 This second protocol creates a new conda environment for CCTBX and uses an existing installation of PyMOL.
 The upside of this approach is that updates to one program will not break the other program.
@@ -134,7 +148,7 @@ git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
 After starting JuptyerLab, select either the `pymol` kernel or the `cctbx37`
 
 
-### Install cctbx inside of PyMOL
+### Install CCTBX inside of PyMOL
 
 The third protocol uses the conda that ships with PyMOL; it does not require an separate Anaconda installation.
 This protocol assumes that git is already installed.
@@ -175,7 +189,7 @@ The downsides are that this approach may be fragile to updates of either PyMOL o
 Prior to updating PyMOL by using the package installer, the old version of the application should be renamed to avoid overwriting it.
 Appending the version number (e.g., PyMOL241.app) will not impede its operation.
 
-### Install PyMOL wheel with the Python interpreter used to install cctbx (Windows)
+### Install PyMOL wheel with the Python interpreter used to install CCTBX (Windows only)
 
 A fourth protocol is restricted to Windows.
 Wheel files for installing PyMOL are available for [download](https://www.lfd.uci.edu/~gohlke/pythonlibs/\#pymol-open-source).
