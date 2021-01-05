@@ -1,18 +1,25 @@
 # jupyterlabcctbxsnips
 
-This readme file serves this GitHub site and three others: 
+This readme file serves this GitHub site and three others: [jupyterlabcctbxsnipsplus](), [jupyterlabpymolsnips](), and [jupyterlabpymolsnipsplus](). 
 
 
 ## Introduction
-The PyMOL is a popular molecular graphics program, CCTBX is the computational crystallography toolbox, and JuptyerLab is a Integrated Development Environment (IDE) for editing Jupyter Notebooks.
-These electronic notebooks are useful for exploring new software, writing tutorials, and documenting computational work.
-The purpose of this site is to prompt the use of PyMOL and CCTBX together in Juptyer Notebooks.
-The comptuational work is supported by snippet libraries for PyMOL and CCTBX that depend on the jupyterlab-snippets-multimenus extension.
 
-The first section below describes five ways to install these three pacakges so that they can play together.
+The PyMOL is a powerful and popular molecular graphics program, CCTBX is the Computational Crystallography Toolbox that is the open-source part of the Phenix project, and JuptyerLab is a Integrated Development Environment (IDE) for editing Jupyter Notebooks.
+These electronic notebooks are useful for exploring new software, writing tutorials, and documenting computational work.
+The purpose of this site is to support the use of PyMOL and CCTBX together in Juptyer Notebooks.
+The comptuational work is supported by snippet libraries for PyMOL and CCTBX.
+The snippet libraries depend on the jupyterlab-snippets-multimenus extension.
+
+The first section below describes five ways to install these three packages so that they can play together.
 There may be more ways. 
-Please post an issue if you want to share another way.
+Please post an issue if you want to share another approach.
 Please post an issue if one of the ways below changes.
+Of course, as per the License, use at your own risk. 
+
+There are other approaches like Binder and Collab that are good for demonstrations, but their limitations will hinder your productivity.
+They are not long-term solutions.
+
 
 ## Five ways to install of PyMOL, CCTBX, and Jupyter 
 
@@ -21,15 +28,21 @@ All three packages are complex and best kept isolated in a dedicated environment
 Configuration files and paths to prior installations can still trip up new installations. 
 Edits of the bashrc or zshrc startup files may be required.
 On Mac OS X, I had to hide my `/usr/local/include` directory by `sudo mv /usr/local/include /usr/local/oldInclude`.
+
 The extensions to JupyterLab depend on Node.js. 
 An error message from conda about needing to install node and npm can be misleasding when both programs are aleady installed. 
-Running the command to enable the serverextension solves this problem.
-The `jupyterlab-snippets-multimenus` is not compatable with JuptyerLab 3.0.0 so an old version has to be installed.
+Running the command to enable the serverextension solves this problem: `jupyter serverextension enable --py jupyterlab --user`.
+The `jupyterlab-snippets-multimenus` is not compatable with JuptyerLab 3.0.0 so version 2.2.0 has to be installed.
 
 If the interpretable error messages have been addressed and there is still trouble, try another approach.
+To remove the broken conda env, enter `conda env remove --name pc37` where the argument for name is the name of the env.
 Once a setup is working, **Do NOT!** tinker with it by adding new extensions or upgrading the packages.
 All too often conflicts between dependent software will emerge and break the set up.
 If it is not broken, do not try to fix it.
+If you must tinker, create a new environment and build your new setup there so that at least the old working version remains functional.
+
+I suggest keeping notes on the nature of your conda envs.
+After you have created two, it is easy to get them confused.
 
 
 
@@ -189,6 +202,7 @@ The downsides are that this approach may be fragile to updates of either PyMOL o
 Prior to updating PyMOL by using the package installer, the old version of the application should be renamed to avoid overwriting it.
 Appending the version number (e.g., PyMOL241.app) will not impede its operation.
 
+
 ### Install PyMOL wheel with the Python interpreter used to install CCTBX (Windows only)
 
 A fourth protocol is restricted to Windows.
@@ -199,19 +213,15 @@ Both cctbx and pymol will share the same Python interpreter.
 Conda or pip.exe can then be used to install jupyter and then juptyerlab. 
 Then pip.exe would be used to install jupyterlab-snippets-multimenus as above.
 
-
-
 ```bash
-
-
 /Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol37 --user
 ```
 
 
 ###  Install PyMOL with cctbx.python (Fedora, maybe other Linuxes)
 
-A fifth protocol is applies where there is a clear path to building pymol from source code.
-The idea is to build and install PyMOL using the same Python Interpreter that was used to build ccbx.
+A fifth protocol applies where there is a clear path to building PyMOL from source code.
+The idea is to build and install PyMOL using the same Python Interpreter that was used to build CCTBX.
 This approach is adapted from the one for [Fedora](https://pymolwiki.org/index.php/CCTBX-fedora32).
 Although this approach uses conda to install the dependencies, it does not require creating an environment.
 Supplement this protocol with the following commands.
@@ -234,17 +244,21 @@ git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
 ```
 
 
-
-
 ## Quick check of the installation
 
 To quickly verify that PyMOL and CCTBX can be called in Jupyter from the same notebook, launch JupyterLab and open a new notebook.
 Select the appropriate kernel.
-Enter in the first cell `from pymol import cmd`.
+Enter in the first cell `from pymol import cmd` and hit shift-return.
 No error message should appear.
-Enter in the next cell `from map_model_manager import map_model_manager`.
-This command will import the model class of the mmtbx module.
+Enter in the next cell `from iotbx.map_model_manager import map_model_manager`.
+This command will import the model class of the iotbx module of CCTBX.
 No errors should be returned by this operation if all is installed correctly.
 
+Where both CCTBX and PyMOL are run by the same Python interpreter, activate the appropriate environment and run the following command in a terminal:
 
+```bash
+python -c 'from pymol import cmd; from iotbx.map_model_manager import map_model_manager'
+```
 
+If all goes well, the terminal will hang for about five seconds and then return nothing.
+Otherwise, error messages will be printed in the terminal window.
