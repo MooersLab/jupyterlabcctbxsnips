@@ -86,14 +86,29 @@ That module was already loaded upon the running of the `pymolshortcuts.py` scrip
 
 <p align="center"><img src="./images/Fig4cctbx.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
 
+The mtzObjectSummary.py script in the MtzObjects subfolder of the CCTBX project prints a summary of an mtz file.
+The mtz file contains data for SirA-like protein (DSY4693) from Desultobacterium hafniense, Northeast
+Structural Genomics Consortium Target DhR2A.
+
+The inspiration for this plot comes from the ReciprocalSpaceship project.
+The data in this mtz has columns of I(+) and I(-).
+We use these data to make a I(+) vs I(-) plot below.
+
+<p align="center"><img src="./images/Fig5mtzSummary.png" alt="HTML5 Icon" style="width:517px;height:727px;"></p>
+
+The I(+) vs I(-) plot below was made after reading the X-ray data into a cctbx Miller array, a special data structure for X-ray data.
+The I(+) and I(-) were eventually read into separate lists.
+These two sets of values were plotted against each other in a scatter plot.
 
 
+<p align="center"><img src="./images/Fig6IpImPlot.png" alt="HTML5 Icon" style="width:535px;height:1027px;"></p>
 
-
-
-
-
-
+There two several advanced features in this plot.
+First, the tick labels needed to be evenly distributed on both axes.
+This was enforced with the imported MultipleLocator.
+Second, the comma for the thousandths place needed to be added to the labels of the tick marks.
+This was enforced with the imported MultipleLocator function.
+Its argument set the increment in the tick mark spacing.
 
 
 
