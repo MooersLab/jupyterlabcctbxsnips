@@ -1,6 +1,6 @@
 # jupyterlabcctbxsnips
 
-This readme file serves this GitHub site and three others: [jupyterlabcctbxsnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus), [jupyterlabpymolpysnips](https://github.com/MooersLab/jupyterlabpymolpysnips), and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnips). 
+This readme file serves this GitHub site and three others: [jupyterlabcctbxsnipsplus](https://github.com/MooersLab/jupyterlabpymolcctbxplus), [jupyterlabpymolpysnips](https://github.com/MooersLab/jupyterlabpymolpysnips), and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus). 
 
 
 ## Introduction
@@ -62,7 +62,6 @@ The shorthand name for the environment reduces the typing required when using th
 
 ```bash
 apt install nodejs git
-git clone https://github.com/MooersLab/pymolcctbx.git
 wget -P /tmp /https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 bash Anaconda3-2020.02-Linux-x86_64.sh
 conda create -n pc37 python=3.7 schrodinger::pymol-bundle conda-forge::cctbx-base conda-forge::jupyter
@@ -70,8 +69,8 @@ conda activate pc37
 conda install jupyterlab=2.2.0
 jupyter serverextension enable --py jupyterlab --user
 pip install jupyterlab-snippets-multimenus
+jupyter lab clean
 jupyter lab build 
-juptyer lab clean
 jupyter --path # select the top option under Data for storing the libraries
 cd ~.local/share/jupyter # change as per output from prior line
 mkdir multimenus_snippets
