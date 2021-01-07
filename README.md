@@ -55,6 +55,9 @@ Please post an issue if one of the ways below changes.
 Of course, as per the License, use these protocoals at your own risk. 
 There are other approaches like Binder and Collab that are good for demonstrations, but their limitations hinder serious work.
 
+The second section provides quick checks of the installation that can be made on the command line or in the Jupyter Noteobook.
+
+The third section provides scripts for running the test scripts.
 
 ## Five ways to install PyMOL, CCTBX, and Jupyter 
 
@@ -333,8 +336,6 @@ Otherwise, error messages will be printed in the terminal window.
 
 ## More extensive tests
 
-
-## More extensive testing
 
 The CCTBX installation in conda environment can be tested by running the following bash script.
 
