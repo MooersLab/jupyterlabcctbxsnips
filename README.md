@@ -1,4 +1,6 @@
 # jupyterlabcctbxsnips
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4317774.svg)](https://doi.org/10.5281/zenodo.4317774)
 
 This readme file serves this GitHub site and three others: [jupyterlabcctbxsnipsplus](https://github.com/MooersLab/jupyterlabpymolcctbxplus), [jupyterlabpymolpysnips](https://github.com/MooersLab/jupyterlabpymolpysnips), and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus). 
 
@@ -6,10 +8,42 @@ This readme file serves this GitHub site and three others: [jupyterlabcctbxsnips
 ## Introduction
 
 The PyMOL is a powerful and popular molecular graphics program, CCTBX is the Computational Crystallography Toolbox that is the open-source part of the Phenix project, and JuptyerLab is an Integrated Development Environment (IDE) for editing Jupyter Notebooks.
-These electronic notebooks are useful for exploring new software, writing tutorials, and documenting computational work.
+These three programs can play together to support reproducible computational work in structural biology.
+These electronic notebooks are also useful for exploring new software and writing tutorials.
+They are wildely popular in the computational sciences: 9.7 million Jupyter Notebooks shared on GitHub as of December 2020.
+
 The purpose of this site is to support the use of PyMOL and CCTBX together in Jupyter Notebooks.
 The computational work is supported by snippet libraries for PyMOL and CCTBX.
-The snippet libraries depend on the jupyterlab-snippets-multimenus extension.
+The snippet libraries depend on the `jupyterlab-snippets-multimenus` extension.
+
+If the installation followed in the second protocol listed in the first subsection below is successful and JupyterLab is started,
+a scene similar to the figure below will appear.
+You will be able to select the kernel named `pc38` instead of the default Python3 kernel.
+In this case, the default kernel will also work.
+The open circle by `pc38` means that the kernel is running.
+
+The column at the left margin shows that the `jupyterlab-snippets-multimenus` extension has been installed.
+The menubar should have `cctbx cctbx+ pymol pymol+` listed between `Kernel` and `Tabs`. 
+Cell [1] in the Juptyer Notebook has been executed. 
+The execution imported the `map_model_manager` class from CCTBX.
+No error messages were returned.
+Cell [2] imported the `cmd` class from pymol.
+No error messages were returned.
+Cell [3] shows the use of bang to run a bash command. 
+In this case, the Python interpreter is being used to return documentation to the area below the cell
+The blue bar in the left margin was triple-clicked to fold this output and replace it with three dots.
+
+<p align="center"><img src="./images/Fig2Pulldown.png" alt="HTML5 Icon" style="width:791px;height:278px;"></p>
+
+The figure below shows part of the cascading menus for the cctbx library.
+The submenus correspond to the names of subfolders in the `cctbx` folder in the `multimenus_snippets` folder._
+Each ultimate menu item is a Python snippet file.
+The selection of a file by clicking on it with the left-mouse buttons leads to its insertion into a new cell below the current cell.
+In the figure below, the `millerArrayFromMtz.py` snippet at the bottom of the pulldown menu was selected and inserted.
+Commented out lines of text describe what this snippet does.
+The code in this cell would be executed by entering `Shift-Enter`.
+
+<p align="center"><img src="./images/Fig2Pulldown.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
 
 The first section below describes five ways to install these three packages so that they can play together.
 There may be more ways. 
@@ -17,8 +51,7 @@ Please post an issue if you want to share another approach.
 Please post an issue if one of the ways below changes.
 Of course, as per the License, use these protocoals at your own risk. 
 
-There are other approaches like Binder and Collab that are good for demonstrations, but their limitations will hinder your productivity.
-They are not long-term coding environments.
+There are other approaches like Binder and Collab that are good for demonstrations, but their limitations hinder serious work.
 
 
 ## Five ways to install PyMOL, CCTBX, and Jupyter 
@@ -64,15 +97,17 @@ The shorthand name for the environment reduces the typing required when using th
 apt install nodejs git
 wget -P /tmp /https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 bash Anaconda3-2020.02-Linux-x86_64.sh
-conda create -n pc37 python=3.7 schrodinger::pymol-bundle conda-forge::cctbx-base conda-forge::jupyter
+conda create -n pc37 python=3.7 schrodinger::pymol-bundle=2.4.1 conda-forge::cctbx-base conda-forge::jupyter
 conda activate pc37
-conda install jupyterlab=2.2.0
-jupyter serverextension enable --py jupyterlab --user
+conda install conda-forge::jupyterlab=2.2.0
+# The following may be needed
+# jupyter serverextension enable --py jupyterlab --user 
 pip install jupyterlab-snippets-multimenus
-jupyter lab clean
-jupyter lab build 
+jupyter lab build
+# Might be needed
+# jupyter lab clean
 jupyter --path # select the top option under Data for storing the libraries
-cd ~.local/share/jupyter # change as per output from prior line
+cd ~/.local/share/jupyter # change as per output from prior line
 mkdir multimenus_snippets
 cd multimenus_snippets
 git clone https://github.com/MooersLab/juptyerlabpymolcctbx.git cctbx
@@ -94,7 +129,8 @@ This path varies with the operating system.
 Next, navigate to this directory and create the subdirectory `multimenus_snippets`.
 Then git clone the repositories of interest. 
 The `+` versions are annotated with guides for editing the snippets.
-These annotations become an annoyance for experienced users.  
+These annotations become an annoyance for experienced users. 
+If you are aksed for a username and passward to your GitHub accoung, you can instead download each repository as a zip file. 
 
 The final command launches JupyterLab in the default web browser.
 No error messages should appear in the terminal.
@@ -103,10 +139,43 @@ The bash alias command `alias pcJL='conda activate pc37 && juptyer lab'` can red
 If there are irresolvable error messages, the broken environment can be removed with the command `conda env remove --name pc37`.
 This first protocol has the upside of using one kernel to call CCTBX and PyMOL and the downside of possible disruptions by updates to either PyMOL or CCTBX.
 
-The above protocol can be adapted to Mac OS X with the appropriate changes in the name of the Anaconda install script and changes in the paths.
+Below is the alternate protocol for PyMOL version 2.4.1 and Python3.8.
+This protocol worked on January 7, 2021.
+
+```bash
+apt install nodejs git
+wget -P /tmp /https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+bash Anaconda3-2020.02-Linux-x86_64.sh
+conda create -n pc38 python=3.8 schrodinger::pymol-bundle=2.4.1 conda-forge::cctbx-base conda-forge::jupyter -y
+conda activate pc38
+conda install conda-forge::jupyterlab=2.2.0 -y
+# The following may be needed
+# jupyter serverextension enable --py jupyterlab --user 
+pip install jupyterlab-snippets-multimenus
+# jupyter lab clean
+jupyter lab build # can take awhile
+ipython kernel install --name pc38 --user # create a kernel
+# Stored in /home/blaine/.local/share/jupyter/kernels/pc38
+jupyter --path # select the top option under Data for storing the libraries
+cd ~/.local/share/jupyter # change as per output from prior line
+mkdir multimenus_snippets
+cd multimenus_snippets
+git clone https://github.com/MooersLab/juptyerlabpymolcctbx.git cctbx
+git clone https://github.com/MooersLab/juptyerlabpymolcctbxplus.git cctbx+
+git clone https://github.com/MooersLab/juptyerlabpymolpysnips.git pymol
+git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
+jupyter lab # or libtbx.python -m jupyter-lab
+```
+
+The above protocols can be adapted to Mac OS X with the appropriate changes in the name of the Anaconda install script and changes in the paths.
+The snippetes are stored in `~/Library/Juptyer/multimenus_snippers`.
+The kernels are stored in `~/Library/Juptyer/kernels`.
 If Node.js is missing, it can be installed with Anaconda or Home Brew. 
-Node.js must of a version greater than 10.0.0 (e.g., conda install conda-forge::nodejs=15.3). 
-Anaconda will sometimes degrade Node.js to version 6.
+Node.js must of a version greater than 10.0.0 (e.g., `conda install conda-forge::nodejs=15.3`). 
+Anaconda will sometimes degrade Node.js to around version 6 when installing some other software in the env.
+A prior installation of JuptyerLab=3.0.0 can cause trouble.
+Run `jupyter serverextension enable --py jupyterlab --user` to reset the configuration for JupyterLab=2.2.0.
+If desparate, delete the configuration in `~/.juptyer` and reinstall.
 
 
 ### PyMOL and CCTBX have separate Python interpreters from Anaconda
