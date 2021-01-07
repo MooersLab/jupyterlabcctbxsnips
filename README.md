@@ -84,7 +84,7 @@ This space group is the same as that for the above crystal structure (3ND4).
 This function uses the `sys` module.
 That module was already loaded upon the running of the `pymolshortcuts.py` script in [1], so it does not need to be imported again.
 
-<p align="center"><img src="./images/Fig3pymol.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
+<p align="center"><img src="./images/Fig4cctbx.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
 
 
 
