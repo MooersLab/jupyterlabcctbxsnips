@@ -10,7 +10,7 @@ This readme file serves this GitHub site and three others: [jupyterlabcctbxsnips
 The PyMOL is a powerful and popular molecular graphics program, CCTBX is the Computational Crystallography Toolbox that is the open-source part of the Phenix project, and JuptyerLab is an Integrated Development Environment (IDE) for editing Jupyter Notebooks.
 These three programs can play together to support reproducible computational work in structural biology.
 These electronic notebooks are also useful for exploring new software and writing tutorials.
-They are wildely popular in the computational sciences: 9.7 million Jupyter Notebooks shared on GitHub as of December 2020.
+They are wildly popular in the computational sciences: 9.7 million Jupyter Notebooks shared on GitHub as of December 2020.
 
 The purpose of this site is to support the use of PyMOL and CCTBX together in Jupyter Notebooks.
 The computational work is supported by snippet libraries for PyMOL and CCTBX.
@@ -40,10 +40,64 @@ The submenus correspond to the names of subfolders in the `cctbx` folder in the 
 Each ultimate menu item is a Python snippet file.
 The selection of a file by clicking on it with the left-mouse buttons leads to its insertion into a new cell below the current cell.
 In the figure below, the `millerArrayFromMtz.py` snippet at the bottom of the pulldown menu was selected and inserted.
-Commented out lines of text describe what this snippet does.
+Commented lines have text that describes what this snippet does.
 The code in this cell would be executed by entering `Shift-Enter`.
 
 <p align="center"><img src="./images/Fig2Pulldown.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
+
+## Some simple examples
+
+The figures below demonstrate running PyMOL from inside a Jupyter notebook.
+The `cmd.do()` method is used to send PyMOL macro language commands to PyMOL.
+This method takes the commands as its argument.
+Several PyMOL macro language commands are concatenated together with semicolons to save space.
+The concatenated commands are enclosed in one set of quotes, single or double.
+
+The `cmd.png()` method is used to save a png file of an image of an RNA duplex.
+This method has its arguments passed to it in the style of a Python function.
+The Image class from IPython is used to load the png file and display it below cell [2].
+
+The RNA duplex is displayed with the ambient occlusion effect. 
+The ambient occlusion effect is not built into PyMOL.
+It is rendered by running the `AOD` shortcut.
+This variant of the effect colors the carbon atoms black.
+The `AO` shortcut colors the carbons light grey. 
+The `AODBW` and `AOBW` variants color the atoms in grayscale.
+Grayscale coloring is also not found in PyMOL, but it is available in the pymolshortcuts.py file.
+The `rein` shortcut is mapped to the `reinitialize` command.
+The `U8` shortcut fetches PDB file 3nd4, generates the biological unit, and orients the molecular object.
+
+These shortcuts are one of over 200 functions loaded by the running of the `pymolshortcuts.py` script in [1].
+The shortcuts are listed below Cell [1] when the script is loaded.
+This listing has been hidden by folding. 
+It can be displayed by clicking on the three dots.
+
+Cell [1] demonstrates how external Python scripts can be loaded and run in PyMOL inside a Jupyter Notebook.
+Note that the script is run in the same manner that they are loaded and run at PyMOL prompt in the PyMOL GUI.
+
+<p align="center"><img src="./images/Fig3pymol.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
+
+The function `get_symm()` is from Robert Campbell's script `list_symm.py`.
+It takes the space group number as an argument to look up the space group information in the `sgtbx` module of CCTBX.
+It is being used here to display the symmetry operators of space group 155 with the shorthand notation found in the International Tables of Crystallography and as rotation matrices plus translation vectors.
+This space group is the same as that for the above crystal structure (3ND4).
+This function uses the `sys` module.
+That module was already loaded upon the running of the `pymolshortcuts.py` script in [1], so it does not need to be imported again.
+
+<p align="center"><img src="./images/Fig3pymol.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Roadmap of rest of this page
