@@ -45,12 +45,14 @@ The code in this cell would be executed by entering `Shift-Enter`.
 
 <p align="center"><img src="./images/Fig2Pulldown.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
 
+
+## Roadmap of rest of this page
+
 The first section below describes five ways to install these three packages so that they can play together.
 There may be more ways. 
 Please post an issue if you want to share another approach.
 Please post an issue if one of the ways below changes.
 Of course, as per the License, use these protocoals at your own risk. 
-
 There are other approaches like Binder and Collab that are good for demonstrations, but their limitations hinder serious work.
 
 
