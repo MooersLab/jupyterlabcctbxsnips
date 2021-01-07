@@ -33,7 +33,7 @@ Cell [3] shows the use of bang to run a bash command.
 In this case, the Python interpreter is being used to return documentation to the area below the cell
 The blue bar in the left margin was triple-clicked to fold this output and replace it with three dots.
 
-<p align="center"><img src="./images/Fig2Pulldown.png" alt="HTML5 Icon" style="width:791px;height:278px;"></p>
+<p align="center"><img src="./images/Fig1Lab.png" alt="HTML5 Icon" style="width:791px;height:278px;"></p>
 
 The figure below shows part of the cascading menus for the cctbx library.
 The submenus correspond to the names of subfolders in the `cctbx` folder in the `multimenus_snippets` folder._
