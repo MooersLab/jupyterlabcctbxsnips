@@ -4,7 +4,7 @@
 
 This readme file serves this GitHub site and three others: [jupyterlabcctbxsnipsplus](https://github.com/MooersLab/jupyterlabpymolcctbxplus), [jupyterlabpymolpysnips](https://github.com/MooersLab/jupyterlabpymolpysnips), and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus). 
 
-An associated GitHub Pages list the name snippets by category <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
+An associated GitHub Pages list the name snippets by <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
 
 
 ## Introduction
