@@ -1,0 +1,34 @@
+import pandas as pd
+"""
+Use pandas to read in a hkl file with whitespace separators into a dataframe.
+Append to the dataframe a column with F/sigmaF values.
+Append to the dataframe a column with the absolute value of the L indices.
+Average F/sigmaF by absL index.
+Write to absL and F/sigmaF to csv file.
+"""
+mtzdata = pd.read_csv('1524start.hkl', names=["H","K","L","F","SIGF"], sep='\s+')
+mtzdata['FovSigF'] = mtzdata.apply(lambda row: row['F'] / row['SIGF'], axis=1)
+mtzdata['absL'] = mtzdata.apply(lambda row: abs(row['L']), axis=1)
+FovSigFabsL = mtzdata.groupby([mtzdata.absL]).FovSigF.mean()
+FovSigFabsL.to_csv('test2.csv')
+$0
+# Description:  L-plot
+# Source:  NA
+
+import pandas as pd
+"""
+Use pandas to read in a hkl file with whitespace separators into a dataframe.
+Append to the dataframe a column with F/sigmaF values.
+Append to the dataframe a column with the absolute value of the L indices.
+Average F/sigmaF by absL index.
+Write to absL and F/sigmaF to csv file.
+"""
+mtzdata = pd.read_csv('1524start.hkl', names=["H","K","L","F","SIGF"], sep='\s+')
+mtzdata['FovSigF'] = mtzdata.apply(lambda row: row['F'] / row['SIGF'], axis=1)
+mtzdata['absL'] = mtzdata.apply(lambda row: abs(row['L']), axis=1)
+FovSigFabsL = mtzdata.groupby([mtzdata.absL]).FovSigF.mean()
+FovSigFabsL.to_csv('test2.csv')
+
+# Description:  L-plot
+# Source:  NA
+
