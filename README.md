@@ -7,19 +7,28 @@ This readme file serves this GitHub site and three others: [jupyterlabcctbxsnips
 
 ## Introduction
 
-The PyMOL is a powerful and popular molecular graphics program, CCTBX is the Computational Crystallography Toolbox that is the open-source part of the Phenix project, and JuptyerLab is an Integrated Development Environment (IDE) for editing Jupyter Notebooks.
-These three programs can play together to support reproducible computational work in structural biology.
-These electronic notebooks are also useful for exploring new software and writing tutorials.
-They are wildly popular in the computational sciences: 9.7 million Jupyter Notebooks shared on GitHub as of December 2020.
+The PyMOL is a powerful and popular molecular graphics program. 
+The Computational Crystallography Toolbox (CCTBX) is the open-source part of the Phenix project. 
+JuptyerLab is an Integrated Development Environment (IDE) for editing Jupyter Notebooks. 
+Jupyter Notebooks support reproducible computational work in structural biology with CCTBX and PyMOL. 
 
-The purpose of this site is to support the use of PyMOL and CCTBX together in Jupyter Notebooks.
-The computational work is supported by snippet libraries for PyMOL and CCTBX.
-The snippet libraries depend on the `jupyterlab-snippets-multimenus` extension.
+Jupyter Notebooks notebooks are also useful for exploring new software and deplyinging tutorials for new software. 
+They are popular in the computational sciences. 
+For example, 9.7 million Jupyter Notebooks were shared on GitHub as of December 2020.
 
-If the installation followed in the second protocol listed in the first subsection below is successful and JupyterLab is started,
-a scene similar to the figure below will appear.
-You will be able to select the kernel named `pc38` instead of the default Python3 kernel.
-In this case, the default kernel will also work.
+The purpose of this site is to support the use of PyMOL and CCTBX together in Jupyter Notebooks. 
+Snippet libraries for PyMOL and CCTBX support the computational work. The snippet libraries depend on the extension for JupyterLab called jupyterlab-snippets-multimenus. 
+Unfortunately, the extensions for the Classic Jupyter Notebook do not run in JupyterLab and vice versa. 
+To enjoy the jupyterlab-snippets-multimenus extension, the notebook must be edited in JupyterLab. 
+
+There are several snippet extensions for the Classic Jupyter Notebook. None of these are as easy for users to install and customize as the jupyterlab-snippets-multimenus extension. 
+Regardless, all of the extensions for snippets still fall short of the support for snippets found in modern text editors and IDEs. 
+For example, the Jupyter extensions do not support tab triggers and tab stops. 
+If you have used snippets in text editors or IDEs, you will have to dampen your expectations when using snippets in Jupyter Notebooks.
+
+If the installation is successful, a scene in the browser like the figure below will appear. 
+You will be able to select the kernel named pc38 instead of the default Python3 kernel. 
+In this case, the default kernel will also work. 
 The open circle by `pc38` means that the kernel is running.
 
 The column at the left margin shows that the `jupyterlab-snippets-multimenus` extension has been installed.
