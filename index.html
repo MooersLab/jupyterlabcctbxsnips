@@ -116,9 +116,8 @@ table.table2 tbody>tr>:nth-child(1){
  text-align:left;
  font-size: 1em;
  border: 1px solid black;
- text-align: left;
  padding: 8px;
- width: 50px;
+ width: 80px;
 }
 
 table.table2 tbody>tr>:nth-child(2){
@@ -126,15 +125,14 @@ table.table2 tbody>tr>:nth-child(2){
     text-align:left;
     font-size: 1em;
     border: 1px solid black;
-    text-align: left;
     padding: 8px;
     width: 300px;
 }
 
 table.table2 th { 
-	font-size: 1.4em;
+	font-size: 1.0em;
 	border:1px solid black; 
-	text-align:center;
+	text-align:left;
 }
 
 table.table2 tr:nth-child(even) {
@@ -187,12 +185,9 @@ ul {
 <body style="font-family:Arial, Helvetica, sans-serif; font-size:15px">
 
 
-<h1> <em>cctbxsnips:</em> CCTBX Script Writing with Code Templates</h1>
+<h1> <em>pymolsnips:</em> CCTBX Script Writing with Code Templates</h1>
 
 
-
-<h2><a href="#Snippet Lists">List of snippets by category and file stem name</a></h2>
-  
 <ul>
 <li><a href="#IOTBX"> IOTBX</a></li>
 <li><a href="#MMTBX"> MMTBX</a></li>
@@ -205,11 +200,15 @@ ul {
 </ul>
 
 
-
+<link rel="stylesheet" href="style.css">
+	
 <a name='IOTBX'> <h3>IOTBX:</h3> </a>
-<table>
+<table class="table2">
 <thead>
-<tr><th>Filestem Name           </th><th>Description                                         </th></tr>
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
 </thead>
 <tbody>
 <tr><td>extractCrystalSymmetry</td><td>Extract crystal symmetry from mtz file.             </td></tr>
@@ -224,9 +223,12 @@ ul {
 
 
 <a name='MMTBX'> <h3>MMTBX:</h3> </a>
-<table>
-<thead>
-<tr><th>Filestem Name  </th><th>Description                                                                </th></tr>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
 </thead>
 <tbody>
 <tr><td>makeMaps     </td><td>Read in mtz and pdb file and write map coefficients to a separate mtz file.</td></tr>
@@ -236,9 +238,12 @@ ul {
 
 
 <a name='MillerArrays'> <h3>MillerArrays:</h3> </a>
-<table>
-<thead>
-<tr><th>Filestem Name                  </th><th>Description                                                                                  </th></tr>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
 </thead>
 <tbody>
 <tr><td>FsigmaFbyabsLindex             </td><td>L-plot                                                                                       </td></tr>
@@ -291,9 +296,12 @@ ul {
 
 
 <a name='MtzObjects'> <h3>MtzObjects:</h3> </a>
-<table>
-<thead>
-<tr><th>Filestem Name     </th><th>Description                                       </th></tr>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
 </thead>
 <tbody>
 <tr><td>mtzObjectSummary</td><td>Read mtz file into a mtz object and print summary.</td></tr>
@@ -303,9 +311,12 @@ ul {
 
 
 <a name='XrayDataPlots'> <h3>XrayDataPlots:</h3> </a>
-<table>
-<thead>
-<tr><th>Filestem Name               </th><th>Description                                                                                                     </th></tr>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
 </thead>
 <tbody>
 <tr><td>IpIm                      </td><td>Scatter plot of I(+) and (I(-). The presence of an anomalous signal is indicated by deviations from x=y.        </td></tr>
@@ -321,8 +332,12 @@ ul {
 
 <a name='commandLineTools'> <h3>commandLineTools:</h3> </a>
 <table>
-<thead>
-<tr><th>Filestem Name           </th><th>Description                                                                 </th></tr>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name</th>
+	<th WIDTH="300">Description </th>
+      </tr>  
 </thead>
 <tbody>
 <tr><td>fixPermissionsOnMacSDK</td><td>Fix permission on MacOS SDK. Adjust the version number of the sdk as needed.</td></tr>
@@ -332,10 +347,13 @@ ul {
 <a href=#categories>Return to list of snippet categories near top.</a>
 
 
-<a name='conda'> <h3>conda:</h3> </a>
-<table>
-<thead>
-<tr><th>Filestem Name                 </th><th>Description                                                                                                                                                                                                                                                                                          </th></tr>
+<a name='conda'> <h3>conda</h3> </a>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
 </thead>
 <tbody>
 <tr><td>condaInstall                </td><td>The conda commands to install cctbx with the jupyter notebook, pandas, and xarray.                                                                                                                                                                                                                   </td></tr>
@@ -360,10 +378,13 @@ Documentation is located here (https://gemmi.readthedocs.io/en/latest/install.ht
 <a href=#categories>Return to list of snippet categories near top.</a>
 
 
-<a name='gemmi'> <h3>gemmi:</h3> </a>
-<table>
-<thead>
-<tr><th>Filestem Name        </th><th>Description                               </th></tr>
+<a name='gemmi'> <h3>gemmi</h3> </a>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
 </thead>
 <tbody>
 <tr><td>pattersonContourMap</td><td>Read in a mtz file with iotbx.file_reader.</td></tr>
