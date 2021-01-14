@@ -59,30 +59,30 @@ The code in this cell would be executed by entering `Shift-Enter`.
 ## Some simple examples
 
 The figures below demonstrate running PyMOL from inside a Jupyter notebook.
-The `cmd.do()` method is used to send the PyMOL macro language (pml) commands to PyMOL.
+The `cmd.do()` method sends the PyMOL macro language (pml) commands to PyMOL.
 This method takes the pml commands as its argument.
-Several PyMOL macro language commands are concatenated together with semicolons to save space.
-The concatenated commands are enclosed in one set of quotes, single or double.
+Semicolons concatenated several pml commands to save space.
+Quotes enclose a group of concatenated commands.
 
-The `cmd.png()` method is used to save a png file of an image of an RNA duplex.
+The `cmd.png()` method saves a png file of an RNA duplex image.
 This method has its arguments passed to it in the style of a Python function.
-The Image class from IPython is used to load the png file and display it below Cell [2].
+The Image class from IPython loads the png file and displays it below Cell [2].
 
-The RNA duplex is displayed with an approximation of the ambient occlusion effect. 
+The RNA duplex is rendered with an approximation of the ambient occlusion or photorealistic effect. 
 This effect is not available in PyMOL.
-It is rendered by running the `AOD` shortcut.
-This variant of the effect colors the carbon atoms black.
+`AOD` renders the effect.
+`AOD` colors the carbon atoms black.
 The `AO` shortcut colors the carbons light grey. 
-The `AODBW` and `AOBW` variants color the atoms in grayscale.
+`AODBW` and `AOBW` color the atoms in grayscale.
 Grayscale coloring is also not found in PyMOL, but it is available in the pymolshortcuts.py file.
-The `rein` shortcut is mapped to the `reinitialize` command.
-The `U8` shortcut fetches PDB file 3nd4, generates the biological unit, and orients the molecular object.
+The `rein` invokes the `reinitialize` command.
+The `U8` fetches PDB file 3nd4, generates the biological unit, and orients the molecular object.
 
-These shortcuts are one of over 200 functions loaded by the running of the `pymolshortcuts.py` script in [1].
+The above shortcuts are part of over 200 functions loaded by running the `pymolshortcuts.py` script in Cell [1].
 The shortcuts are listed below Cell [1] when the script is loaded.
-This listing has been hidden by folding. 
-It can be displayed by clicking on the three dots.
-The script is available for download [here](). 
+Folding hid the list.
+Clicking the three dots displays the list. 
+The script is available for download [here](https://github.com/MooersLab/pymolshortcuts). 
 
 Cell [1] demonstrates how external Python scripts can be loaded and run in PyMOL inside a Jupyter Notebook.
 Note that the script is run in the same manner that they are loaded and run at PyMOL prompt in the PyMOL GUI.
