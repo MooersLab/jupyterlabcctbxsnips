@@ -46,20 +46,20 @@ The blue bar in the left margin was triple-clicked to fold this output and repla
 
 <p align="center"><img src="./images/Fig1lab.png" alt="HTML5 Icon" style="width:791px;height:278px;"></p>
 
-The figure below shows part of the cascading menus for the cctbx library.
-The submenus correspond to the names of subfolders in the `cctbx` folder in the `multimenus_snippets` folder._
-Each ultimate menu item is a Python snippet file.
-The selection of a file by clicking on it with the left-mouse buttons leads to its insertion into a new cell below the current cell.
-In the figure below, the `millerArrayFromMtz.py` snippet at the bottom of the pulldown menu was selected and inserted.
-Commented lines have text that describes what this snippet does.
-The code in this cell would be executed by entering `Shift-Enter`.
-
+The figure below shows part of the cascading menus for the cctbx library. 
+The submenus correspond to the names of subfolders in the cctbx folder in the multimenus_snippets folder.
+Each ultimate menu item is a Python snippet file. 
+The selection of a snippet file by clicking on it with the left-mouse button inserts its content into a new cell below the current cell. 
+The millerArrayFromMtz.py snippet at the bottom of the pulldown menu was selected and inserted in the figure below. 
+Commented lines have text that describes what this snippet does. 
+The code in this cell would be executed by entering Shift-Enter.
 <p align="center"><img src="./images/Fig2Pulldown.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
 
 ## Some simple examples
 
 The figures below demonstrate running PyMOL from inside a Jupyter notebook.
-The `cmd.do()` method sends the PyMOL macro language (pml) commands to PyMOL.
+The `cmd.do()` method sends the PyMOL command language (pml) commands to PyMOL.
+(The PyMOL command language is a Domain-specific Language (DSL) that is limited to PyMOL.)
 This method takes the pml commands as its argument.
 Semicolons concatenated several pml commands to save space.
 Quotes enclose a group of concatenated commands.
@@ -78,49 +78,45 @@ Grayscale coloring is also not found in PyMOL, but it is available in the pymols
 The `rein` invokes the `reinitialize` command.
 The `U8` fetches PDB file 3nd4, generates the biological unit, and orients the molecular object.
 
-The above shortcuts are part of over 200 functions loaded by running the `pymolshortcuts.py` script in Cell [1].
+The above shortcuts are part of over 250 functions loaded by running the `pymolshortcuts.py` script in Cell [1].
 The shortcuts are listed below Cell [1] when the script is loaded.
 Folding hid the list.
 Clicking the three dots displays the list. 
 The script is available for download [here](https://github.com/MooersLab/pymolshortcuts). 
 
 Cell [1] demonstrates how external Python scripts can be loaded and run in PyMOL inside a Jupyter Notebook.
-Note that the script is run in the same manner that they are loaded and run at PyMOL prompt in the PyMOL GUI.
+Note that the script is run in the same manner that a Python script is loaded and run at PyMOL prompt in the PyMOL GUI.
 
 <p align="center"><img src="./images/Fig3pymol.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
 
 The function `get_symm()` is from Robert Campbell's script `list_symm.py`.
 It takes the space group number as an argument to look up the space group information in the `sgtbx` module of CCTBX.
-It is being used here to display the symmetry operators of space group 155 with the shorthand notation found in the International Tables of Crystallography and as rotation matrices plus translation vectors.
+It is used here to display the symmetry operators of space group 155 with the shorthand notation found in the International Tables of Crystallography and as rotation matrices plus translation vectors.
 This space group is the same as that for the above crystal structure (3ND4).
 This function uses the `sys` module.
-That module was already loaded upon the running of the `pymolshortcuts.py` script in [1], so it does not need to be imported again.
+That module was loaded upon running the `pymolshortcuts.py` script in [1], so no need to import it again. 
 
 <p align="center"><img src="./images/Fig4cctbx.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
 
-The mtzObjectSummary.py script in the MtzObjects subfolder of the CCTBX project prints a summary of an mtz file.
+The mtzObjectSummary.py snippet prints a summary of an mtz file.
 The mtz file contains data for SirA-like protein (DSY4693) from Desultobacterium hafniense, Northeast
 Structural Genomics Consortium Target DhR2A.
 
 The inspiration for this plot comes from the ReciprocalSpaceship project.
 The data in this mtz has columns of I(+) and I(-).
-We use these data to make a I(+) vs I(-) plot below.
+We use these data to make a I(+) vs I(-) scatter plot below.
 
 <p align="center"><img src="./images/Fig5mtzSummary.png" alt="HTML5 Icon" style="width:517px;height:727px;"></p>
 
-The I(+) vs I(-) plot below was made after reading the X-ray data into a cctbx Miller array, a special data structure for X-ray data.
+The I(+) vs I(-) plot below was made after reading the X-ray data into a cctbx Miller array, a data structure designed for X-ray data.
 The I(+) and I(-) were eventually read into separate lists.
-These two sets of values were plotted against each other in a scatter plot.
-
+We plot the two lists against each other in a scatter plot.
 
 <p align="center"><img src="./images/Fig6IpImPlot.png" alt="HTML5 Icon" style="width:535px;height:1027px;"></p>
 
-There two several advanced features in this plot.
-First, the tick labels needed to be evenly distributed on both axes.
-This was enforced with the imported `MultipleLocator` function.
-Second, the comma for the thousandths place needed to be added to the labels of the tick marks.
-This was enforced with the imported MultipleLocator function.
-Its argument set the increment in the tick mark spacing.
+There are two advanced Matplotlib features in this plot.
+First, the imported `MultipleLocator` function enforced even distribution of the tick labels.
+Second, the imported `FunctionFormatter` added the commas to the thousandths place in the tick mark labels.
 
 
 ## Roadmap of rest of this page
