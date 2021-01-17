@@ -121,39 +121,45 @@ Second, the imported `FunctionFormatter` added the commas to the thousandths pla
 
 ## Roadmap of rest of this page
 
-The first section below describes five ways to install these three packages so that they can play together.
+The first section below describes five ways to install Jupyter, PyMOL, and CCYBX so that they can play together.
 There may be more ways. 
 Please post an issue if you want to share another approach.
 Please post an issue if one of the ways below changes.
-Of course, as per the License, use these protocoals at your own risk. 
-There are other approaches like Binder and Collab that are great for demonstrations, but their limitations hinder serious work.
+Of course, as per the License, use these protocols at your own risk. 
+There are other ways to run Jupyter like Binder and Collab.
+The latter two are great for demonstrations, but their limitations hinder serious work.
 
-The second section provides quick checks of the installation that can be made on the command line or in the Jupyter Noteobook.
+The second section provides quick checks of the installation.
+Run the checks on the command line or in the Jupyter Notebook.
 
 The third section provides scripts for running the test scripts.
 
 ## Five ways to install PyMOL, CCTBX, and Jupyter 
 
-The installation of both CCTBX, PyMOL, and Jupyter can be accomplished by one of several approaches.
 All three packages are complex and best kept isolated in a dedicated environment.
-Configuration files and paths to prior installations of these programs can still trip up new installations. 
-Edits of the `.bashrc` or `.zshrc` startup files may be required.
-On Mac OS X, I had to hide my `/usr/local/include` directory by `sudo mv /usr/local/include /usr/local/oldInclude`.
+Configuration files and paths from prior installations of these programs may hinder the new software installations. 
+To solve this problem, edit of the `.bashrc` or `.zshrc` startup files.
 
 The extensions to `JupyterLab` depend on `Node.js`. 
-An error message from conda about needing to install node and npm can be misleading when both programs are already installed. 
-Running the command to enable the serverextension solves this problem: `jupyter serverextension enable --py jupyterlab --user`.
-The `jupyterlab-snippets-multimenus` is not compatible with JuptyerLab 3.0.0 so version 2.2.0 has to be installed.
+Conda may erroneously report that node and npm are not installed.
+Eliminate this error by enabling the server extension.
+Do this by running `jupyter serverextension enable --py jupyterlab --user`.
 
-If the interpretable error messages have been addressed and there is still trouble, try another approach.
-To remove the broken conda env, enter `conda env remove --name pc37` where the argument for the `--name` option is the name of the env.
+Conda may issue an error message to install node and npm.
+This message is misleading when both programs are already installed. 
+Run `jupyter serverextension enable --py jupyterlab --user` to solve this problem. 
+
+The extension `jupyterlab-snippets-multimenus` is not compatible with JuptyerLab version 3.0.0.
+The JuptyerLab version 2.2.0 has to be installed instead.
+
+If trouble emerges, try another approach.
+To remove a broken conda env, enter `conda env remove --name <env name>`.
 Once a setup is working, **Do NOT!** tinker with it by adding new extensions or upgrading the packages.
-All too often conflicts between dependent software will emerge and break the setup.
-If you must tinker, create a new environment and build your new setup there so that at least the old version remains functional.
+Conflicts between dependent software will eventually break the setup.
+If you must add more packages, create a new environment and build your new setup there.
 
 I suggest keeping notes on the nature of your conda environments.
-After you have created two, it is easy loose track of their nature.
-
+After you have created two, it is easy to lose track of their nature.
 
 
 ### PyMOL and CCTBX share a Python interpreter from Anaconda
@@ -168,7 +174,7 @@ It also works on Mac OSX, although I had to move my `/usr/local/include` directo
 First, update the existing software on Ubuntu and install Node.js and git.
 Next, download the appropriate Anaconda installation script.
 This script is run in the home directory to install Anaconda locally.
-One conda command with a long argument list is run to install juptyer, pymol, and cctbx.
+One conda command with a long argument list is run to install Juptyer, PyMOL, and CCTBX.
 Here, the environment name `pc37` represents `pymol-cctbx-python3.7`.
 The shorthand name for the environment reduces the typing required when using this environment.
 
@@ -203,19 +209,19 @@ It may need to be activated.
 Activation of the extension requires that JupyterLab is rebuilt.
 
 The `jupyter --path` command returns a list of paths that vary between operating systems.
-The top path listed under Data is where the snippet libraries are stored.
+The snippet libraries are stored in the first path listed under Data.
 This path varies with the operating system.
 Next, navigate to this directory and create the subdirectory `multimenus_snippets`.
 Then `git clone` the repositories of interest. 
-The `+` versions are annotated with guides for editing the snippets.
+The `+` versions have guides for editing the snippets.
 These annotations become an annoyance for experienced users. 
-If you are asked for a username and passward to your GitHub account, you can instead download each repository as a zip file. 
+You can also download each repository as a zip file. 
 
 The final command launches JupyterLab in the default web browser.
 No error messages should appear in the terminal.
 The menu bar should contain the items `cctbx`, `cctbx+`, `pymol` and `pymol+`.
 The bash alias command `alias pcJL='conda activate pc37 && juptyer lab'` can reduce subsequent typing.
-If there are irresolvable error messages, the broken environment can be removed with the command `conda env remove --name pc37`.
+If there are irresolvable error messages, remove the broken environment with the command `conda env remove --name pc37`.
 This first protocol has the upside of using one kernel to call CCTBX and PyMOL and the downside of possible disruptions by updates to either PyMOL or CCTBX.
 
 Below is the alternate protocol for PyMOL version 2.4.1 and Python3.8.
@@ -246,38 +252,38 @@ git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
 jupyter lab # or libtbx.python -m jupyter-lab
 ```
 
-The above protocols can be adapted to Mac OS X with the appropriate changes in the name of the Anaconda install script and changes in the paths.
-The snippetes are stored in `~/Library/Juptyer/multimenus_snippers`.
+The above protocols is adapted to Mac OS X by changing the Anaconda install script's name and the paths.
+The snippets are stored in `~/Library/Juptyer/multimenus_snippers` on a Mac.
 The kernels are stored in `~/Library/Juptyer/kernels`.
-If `Node.js` is missing, it can be installed with Anaconda or Home Brew. 
+If `Node.js` is missing, install it with Anaconda or Home Brew. 
 `Node.js` must of a version greater than 10.0.0 (e.g., `conda install conda-forge::nodejs=15.3`). 
 Anaconda will sometimes degrade `Node.js` to around version 6 when installing some other software in the env.
 A prior installation of `JuptyerLab=3.0.0` can cause trouble.
 Run `jupyter serverextension enable --py jupyterlab --user` to reset the configuration for `JupyterLab=2.2.0`.
 If desparate, delete the configuration in `~/.juptyer` and reinstall.
 
-
 ### PyMOL and CCTBX have separate Python interpreters from Anaconda
 
 This second protocol creates a new conda environment for CCTBX and uses an existing installation of PyMOL.
 The upside of this approach is that updates to one program will not break the other program.
-JuptyerLab is installed in both the CCTBX environment and again in PyMOL.
+JupyterLab is installed in both the CCTBX environment and again in PyMOL.
 Separate kernels are created for CCTBX and for the Python interpreter in the PyMOL.app.
 PyMOL and  CCTBX cannot be called from the same cell.
 Also, the kernel has to be switched when changing programs.
 The name  `cctbx37` is designed to track the Python version used to create the environment. 
-Create a Juptyer kernel also named `cctbx37`.
+Create a Jupyter kernel also named `cctbx37`.
 
 
-With PyMOL installed in the usual location via its installer, open PyMOL and install Jupyter inside it with the command `conda install -c conda-forge jupyter -y` entered at the PyMOL prompt.
+With PyMOL installed via its installer, open PyMOL and install Jupyter inside PyMOL.
+Use the command `conda install -c conda-forge jupyter -y` entered at the PyMOL prompt.
 The install can be slow and the PyMOL prompt may appear to hang.
 Give it several minutes to complete.
-Success at installation will be reported to the command history window above the PyMOL prompt.
-Next, create a kernel named `pymol2.4.1` by entering in the terminal the following command that contains the path to the Ipython executable inside of the `PyMOL.app`.
+Success at installation is reported to the command history window.
+Next, create a kernel named `pymol2.4.1`.
+Enter the following command that contains the path to the Ipython executable inside of the `PyMOL.app`.
 On the Mac, the path and command is as follows: `/Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol37 --user`.
 
 Download and move the snippet libraries into place as above.
-
 ```bash
 
 conda create -n cctbx37 python=3.7 conda-forge::cctbx-base conda-forge::jupyter 
@@ -309,17 +315,20 @@ After starting JuptyerLab, select either the `pymol` kernel or the `cctbx37`.
 
 ### Install CCTBX inside of PyMOL
 
-The third protocol uses the conda binary that ships with PyMOL; it does not require a separate Anaconda installation.
+The third protocol uses the conda binary that ships with PyMOL,
+It does not require a separate Anaconda installation.
 This protocol assumes that `git` is already installed.
 Open PyMOL and then install with separate conda commands jupyter, jupyter-lab, and cctbx-base.
-The subsequent commands issued from the terminal.
+The next commands issued from the terminal.
 Adjust the path to the PyMOL.app as needed.
 Enalbe the JupyterLab severer extension.
 Create a Juptyer kernel named `pymol`.
 Install the JuptyerLab extension with `pip`.
 Rebuild JuptyerLab and install the snippets via git clone.
 Launch the JupyterLab with the command `/Applications/PyMOL.app/Contents/bin/jupyter-lab`.
-To ease running this installation of JupyterLab, add the following bash alias command to the standard location (e.g., `.bashrc` or `.bashAliases`): `alias pJL='/Applications/PyMOL.app/Contents/bin/jupyter-lab'`.
+Create an alias to this install of JupyterLab.
+Add the alias command in the standard location (e.g., `.bashrc` or `.bashAliases`).
+For example,  `alias pJL='/Applications/PyMOL.app/Contents/bin/jupyter-lab'`.
 
 ```bash
 # At the PyMOL prompt in the PyMOL GUI paste the following:
@@ -343,11 +352,11 @@ git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
 /Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol37 --user
 ```
 
-The upside of this approach is that CCTBX can be called while using the PyMOL kernel, so there is no need to switch kernels.
-The downsides are that this approach may be fragile to updates of either PyMOL or CCTBX.
-Prior to updating PyMOL by using the package installer, the old version of the application should be renamed to avoid overwriting it.
+The upside of this approach is that CCTBX can be called while using the PyMOL kernel.
+There is no need to switch kernels.
+The downsides of this approach are that it may be fragile to updates of either PyMOL or CCTBX.
+Before updating PyMOL, rename the old version to avoid overwriting it.
 Appending the version number (e.g., `PyMOL241.app`) will not impede its operation.
-
 
 ### Install PyMOL wheel with the Python interpreter used to install CCTBX (Windows only)
 
@@ -369,7 +378,7 @@ Then `pip.exe` would be used to install `jupyterlab-snippets-multimenus` as abov
 A fifth protocol applies where there is a clear path to building PyMOL from source code.
 The idea is to build and install PyMOL using the same Python Interpreter that was used to build CCTBX.
 This approach is adapted from the one for [Fedora](https://pymolwiki.org/index.php/CCTBX-fedora32).
-Although this approach uses conda to install the dependencies, it does not require creating an environment.
+This approach does not require creating an environment.
 Supplement this protocol with the following commands.
 
 ```bash
@@ -391,7 +400,9 @@ git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
 
 ## Quick check of the installation
 
-To quickly verify that PyMOL and CCTBX can be called in Jupyter from the same notebook, launch JupyterLab and open a new notebook.
+
+Next, verify that PyMOL and CCTBX can be called from the same notebook.
+Launch JupyterLab and open a new notebook.
 Select the appropriate kernel.
 Enter in the first cell `from pymol import cmd` and enter `Shift-Return`.
 No error message should appear.
