@@ -164,72 +164,121 @@ After you have created two, it is easy to lose track of their nature.
 
 ### PyMOL and CCTBX share a Python interpreter from Anaconda
 
-The first approach is outlined in the code listing below.
-It creates one Anaconda environment for using both PyMOL and CCTBX.
+The first approach is outlined in the series of code listings below.
+I recommend copying and pasting one command at a time.
+You may need to update or change the names of some of the links and file paths if one of the commands returns errors.
+
+The first approach creates one Anaconda environment for using both PyMOL and CCTBX.
 This approach uses one kernel in Jupyter.
 It eliminates the need to switch between kernels in one notebook.
-The protocol worked on a new instance on Ubuntu 20.04.
-It also works on Mac OSX, although I had to move my `/usr/local/include` directory to avoid conflicts. 
+The protocol worked on a fresh instance on Ubuntu 20.04.
+It also works on Mac OSX.
+If you have installed cctbx in the past, be sure to comment out the LIBTBX_DIR environment in your .bashrc or .zshrc file.
+If you have intall juputer in the past, you may want to remove the old configuration files in ~/.jupyter if
+
+, but  although I had to move my `/usr/local/include` directory to avoid conflicts. 
 
 First, update the existing software on Ubuntu and install Node.js and git.
-Next, download the appropriate Anaconda installation script.
-This script is run in the home directory to install Anaconda locally.
-One conda command with a long argument list is run to install Juptyer, PyMOL, and CCTBX.
-Here, the environment name `pc37` represents `pymol-cctbx-python3.7`.
-The shorthand name for the environment reduces the typing required when using this environment.
 
 ```bash
-apt install nodejs git
-wget -P /tmp /https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+apt install nodejs npm git
+```
+
+Next, download the appropriate Anaconda installation script.
+This script is run in the home directory to install Anaconda locally in your home directory.
+This negates the need to use sudo.
+
+```bash
+wget -P /home/blaine https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 bash Anaconda3-2020.02-Linux-x86_64.sh
+```
+
+One conda command with a long argument list is run to install Jupyter, PyMOL, and CCTBX.
+Here, the environment name `pc37` represents `pymol-cctbx-python3.7`.
+The shorthand name for the environment reduces the typing required when using this environment.
+Next, activate this new environment and install verion 2.2.0 of JupyterLab.
+The newer versions of JuptyerLab do not work with the jupyterlab-snippets-multimenus extensions that we want to install and use to manage the snippets.
+
+```bash
 conda create -n pc37 python=3.7 schrodinger::pymol-bundle=2.4.1 conda-forge::cctbx-base conda-forge::jupyter
 conda activate pc37
 conda install conda-forge::jupyterlab=2.2.0
-# The following may be needed
-# jupyter serverextension enable --py jupyterlab --user 
+```
+
+Now install the extension from PyP and run the following command to activate the extension.
+```bash
 pip install jupyterlab-snippets-multimenus
 jupyter lab build
-# Might be needed
-# jupyter lab clean
-jupyter --path # select the top option under Data for storing the libraries
+```
+
+Run the first command to get a list of paths to the librairies.
+
+Select the top option under Data.
+This is where the libraries will be stored.
+The snippet libraries are stored in the first path listed under Data.
+This path varies with the operating system.
+
+Make a subdirectory named `multimenus_snippets` in this directory and change directories to it. _
+
+```bash
+jupyter --path
 cd ~/.local/share/jupyter # change as per output from prior line
 mkdir multimenus_snippets
 cd multimenus_snippets
-git clone https://github.com/MooersLab/juptyerlabpymolcctbx.git cctbx
-git clone https://github.com/MooersLab/juptyerlabpymolcctbxplus.git cctbx+
-git clone https://github.com/MooersLab/juptyerlabpymolpysnips.git pymol
-git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
-jupyter lab # or libtbx.python -m jupyter-lab
+````
+
+Run git clone to install the four libraries into four subdirectories that will become four menu items.
+The four subdirectories do not have to be created before .
+
+
+```bash
+git clone https://github.com/MooersLab/jupyterlabcctbxsnips.git cctbx
+git clone https://github.com/MooersLab/jupyterlabcctbxsnipsplus.git cctbx+
+git clone https://github.com/MooersLab/jupyterlabpymolpysnips.git pymol
+git clone https://github.com/MooersLab/jupyterlabpymolpysnipsplus.git pymol+
 ```
 
-This new environment is activated, and JupyterLab is installed with the conda command.
-The pip command is used to install the extension jupyterlab-snippets-multimenus from PyPi.
-JuptyerLab is a server extension for Jupyter Notebook.
-It may need to be activated.
-Activation of the extension requires that JupyterLab is rebuilt.
+The `+` versions have guides for editing the snippets.
+These annotations may become an annoyance for experienced users. 
+You can also download each repository as a zip file. 
+
+
+Change directories back to your home directory and start up JuptyerLab.
+No error messages should appear in the terminal.
+The menu bar in JupyterLab should contain the items `cctbx`, `cctbx+`, `pymol` and `pymol+`.
+
+```bash
+cd ~/
+jupyter lab # or if you wish, run libtbx.python -m jupyter-lab
+```
+
+The bash alias command `alias pcJL='conda activate pc37 && juptyer lab'` can reduce subsequent typing.
+If there are irresolvable error messages, remove the broken environment with the command `conda env remove --name pc37`.
+This first protocol has the upside of using one kernel to call CCTBX and PyMOL and the downside of possible disruptions by updates to either PyMOL or CCTBX.
+ 
+The following commands may help if you run into trouble. 
+The first command registers jupuyterlab as an extension.
+The second command cleans up the build of jupyterlab and can be run before `jupyter lab build`.
+
+```bash
+jupyter serverextension enable --py jupyterlab --user
+jupyter lab clean
+```
 
 The `jupyter --path` command returns a list of paths that vary between operating systems.
 The snippet libraries are stored in the first path listed under Data.
 This path varies with the operating system.
 Next, navigate to this directory and create the subdirectory `multimenus_snippets`.
 Then `git clone` the repositories of interest. 
-The `+` versions have guides for editing the snippets.
-These annotations become an annoyance for experienced users. 
-You can also download each repository as a zip file. 
 
 The final command launches JupyterLab in the default web browser.
-No error messages should appear in the terminal.
-The menu bar should contain the items `cctbx`, `cctbx+`, `pymol` and `pymol+`.
-The bash alias command `alias pcJL='conda activate pc37 && juptyer lab'` can reduce subsequent typing.
-If there are irresolvable error messages, remove the broken environment with the command `conda env remove --name pc37`.
-This first protocol has the upside of using one kernel to call CCTBX and PyMOL and the downside of possible disruptions by updates to either PyMOL or CCTBX.
 
 Below is the alternate protocol for PyMOL version 2.4.1 and Python3.8.
 This protocol worked on January 7, 2021.
 
 ```bash
-apt install nodejs git
-wget -P /tmp /https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+apt install nodejs npm git
+wget -P /home/blaine https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 bash Anaconda3-2020.02-Linux-x86_64.sh
 conda create -n pc38 python=3.8 schrodinger::pymol-bundle=2.4.1 conda-forge::cctbx-base conda-forge::jupyter -y
 conda activate pc38
@@ -245,22 +294,26 @@ jupyter --path # select the top option under Data for storing the libraries
 cd ~/.local/share/jupyter # change as per output from prior line
 mkdir multimenus_snippets
 cd multimenus_snippets
-git clone https://github.com/MooersLab/juptyerlabpymolcctbx.git cctbx
-git clone https://github.com/MooersLab/juptyerlabpymolcctbxplus.git cctbx+
-git clone https://github.com/MooersLab/juptyerlabpymolpysnips.git pymol
-git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
+git clone https://github.com/MooersLab/jupyterlabcctbxsnips.git cctbx
+git clone https://github.com/MooersLab/jupyterlabcctbxsnipsplus.git cctbx+
+git clone https://github.com/MooersLab/jupyterlabpymolpysnips.git pymol
+git clone https://github.com/MooersLab/jupyterlabpymolpysnipsplus.git pymol+
+cd ~/
 jupyter lab # or libtbx.python -m jupyter-lab
 ```
 
-The above protocols is adapted to Mac OS X by changing the Anaconda install script's name and the paths.
+The above protocols are adapted to Mac OS X by changing the Anaconda install script's name and the paths.
 The snippets are stored in `~/Library/Juptyer/multimenus_snippers` on a Mac.
 The kernels are stored in `~/Library/Juptyer/kernels`.
+
 If `Node.js` is missing, install it with Anaconda or Home Brew. 
 `Node.js` must of a version greater than 10.0.0 (e.g., `conda install conda-forge::nodejs=15.3`). 
 Anaconda will sometimes degrade `Node.js` to around version 6 when installing some other software in the env.
+
 A prior installation of `JuptyerLab=3.0.0` can cause trouble.
 Run `jupyter serverextension enable --py jupyterlab --user` to reset the configuration for `JupyterLab=2.2.0`.
 If desparate, delete the configuration in `~/.juptyer` and reinstall.
+
 
 ### PyMOL and CCTBX have separate Python interpreters from Anaconda
 
@@ -285,28 +338,61 @@ On the Mac, the path and command is as follows: `/Applications/PyMOL.app/Content
 
 Download and move the snippet libraries into place as above.
 ```bash
-
 conda create -n cctbx37 python=3.7 conda-forge::cctbx-base conda-forge::jupyter 
 conda install conda-forge::jupyterlab=2.2.0
 ipython kernel install --name cctbx37 --user
+```
 
+```bash
 # Inside PyMOL, paste the following at the command prompt
 conda install conda-forge::jupyter conda-forge::jupyterlab=2.2.0 -y
+```
 
+
+```bash
 # Inside PyMOL, paste the following at the command prompt
 /Applications/PyMOL.app/Contents/bin/jupyter serverextension enable --py jupyterlab --user
 /Applications/PyMOL.app/Contents/bin/pip install jupyterlab-snippets-multimenus
+```
+
+
+
+
+```bash
 /Applications/PyMOL.app/Contents/bin/jupyter lab build
 /Applications/PyMOL.app/Contents/bin/jupyter lab clean
+```
+
+
+
+```bash
 /Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol --user
+```
+
+
+
+
+```bash
 /Applications/PyMOL.app/Contents/bin/jupyter --path # select the top option under Data for storing the libraries
 cd ~.local/share/jupyter # change as per output from prior line
 mkdir multimenus_snippets
 cd multimenus_snippets
-git clone https://github.com/MooersLab/juptyerlabpymolcctbx.git cctbx
-git clone https://github.com/MooersLab/juptyerlabpymolcctbxplus.git cctbx+
-git clone https://github.com/MooersLab/juptyerlabpymolpysnips.git pymol
-git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
+```
+
+
+
+
+```bash
+git clone https://github.com/MooersLab/jupyterlabcctbxsnips.git cctbx
+git clone https://github.com/MooersLab/jupyterlabcctbxsnipsplus.git cctbx+
+git clone https://github.com/MooersLab/jupyterlabpymolpysnips.git pymol
+git clone https://github.com/MooersLab/jupyterlabpymolpysnipsplus.git pymol+
+```
+
+
+
+```bash
+cd ~/
 /Applications/PyMOL.app/Contents/bin/jupyter lab 
 ```
 
@@ -315,48 +401,92 @@ After starting JuptyerLab, select either the `pymol` kernel or the `cctbx37`.
 
 ### Install CCTBX inside of PyMOL
 
-The third protocol uses the conda binary that ships with PyMOL,
+The third protocol uses the conda binary that ships with PyMOL.
 It does not require a separate Anaconda installation.
 This protocol assumes that `git` is already installed.
 Open PyMOL and then install with separate conda commands jupyter, jupyter-lab, and cctbx-base.
-The next commands issued from the terminal.
-Adjust the path to the PyMOL.app as needed.
-Enalbe the JupyterLab severer extension.
-Create a Juptyer kernel named `pymol`.
-Install the JuptyerLab extension with `pip`.
-Rebuild JuptyerLab and install the snippets via git clone.
-Launch the JupyterLab with the command `/Applications/PyMOL.app/Contents/bin/jupyter-lab`.
-Create an alias to this install of JupyterLab.
-Add the alias command in the standard location (e.g., `.bashrc` or `.bashAliases`).
-For example,  `alias pJL='/Applications/PyMOL.app/Contents/bin/jupyter-lab'`.
 
 ```bash
 # At the PyMOL prompt in the PyMOL GUI paste the following:
 conda install conda-forge::cctbx-base conda-forge::jupyter 
 conda install conda-forge::jupyterlab=2.2.0
 conda install conda-forge::cctbx-base
-# In a terminal
+````
+
+The next commands issued from the terminal.
+Adjust the path to the PyMOL.app as needed.
+Enable the JupyterLab server extension.
+
+```bash
 /Applications/PyMOL.app/Contents/bin/jupyter serverextension enable --py jupyterlab --user
+```
+
+Create a Juptyer kernel named `pymol`.
+
+```bash
 /Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol --user
+```
+
+Install the JuptyerLab extension with `pip`.
+
+```bash
 /Applications/PyMOL.app/Contents/bin/pip install jupyterlab-snippets-multimenus
-/Applications/PyMOL.app/Contents/bin/jupyter lab build
+```
+
+Rebuild JupyterLab and install the snippets via git clone.
+
+```bash
 /Applications/PyMOL.app/Contents/bin/jupyter lab clean
-/Applications/PyMOL.app/Contents/bin/jupyter --path # select the top option under Data for storing the libraries
-cd ~.local/share/jupyter # change as per output from prior line
+/Applications/PyMOL.app/Contents/bin/jupyter lab build
+```
+
+Select the top option under Data for storing the libraries.
+
+```bash
+/Applications/PyMOL.app/Contents/bin/jupyter --path
+```
+
+Change as per output from the prior command, make the subdirectory `multimenus_snippets`, and change to this subdirectory.
+
+```bash
+cd ~.local/share/jupyter
 mkdir multimenus_snippets
-cd multimenus_snippets
-git clone https://github.com/MooersLab/juptyerlabpymolcctbx.git cctbx
-git clone https://github.com/MooersLab/juptyerlabpymolcctbxplus.git cctbx+
-git clone https://github.com/MooersLab/juptyerlabpymolpysnips.git pymol
-git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
+```
+
+Install the the libraries with git.
+
+```bash
+git clone https://github.com/MooersLab/jupyterlabcctbxsnips.git cctbx
+git clone https://github.com/MooersLab/jupyterlabcctbxsnipsplus.git cctbx+
+git clone https://github.com/MooersLab/jupyterlabpymolpysnips.git pymol
+git clone https://github.com/MooersLab/jupyterlabpymolpysnipsplus.git pymol+
+```
+
+Change to the home directory and create a kernel `pymol37`.
+
+```bash
+cd ~/
 /Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol37 --user
 ```
 
-The upside of this approach is that CCTBX can be called while using the PyMOL kernel.
+Launch the JupyterLab with the command.
+
+```bash
+/Applications/PyMOL.app/Contents/bin/jupyter-lab
+```
+
+To ease reuse of the JupyterLab installed in PyMOl, add the following or similar alias to the `.bashrc` file.
+
+```bash
+alias pJL='/Applications/PyMOL.app/Contents/bin/jupyter-lab'
+```
+
+The upside of this approach is that CCTBX can be called while using the `PyMOL` kernel.
 There is no need to switch kernels.
-The downsides of this approach are that it may be fragile to updates of either PyMOL or CCTBX.
-Before updating PyMOL, rename the old version to avoid overwriting it.
+The downsides of this approach are that it may be fragile to updates of either `PyMOL` or `CCTBX`.
+Before updating `PyMOL`, rename the old version to avoid overwriting it.
 Appending the version number (e.g., `PyMOL241.app`) will not impede its operation.
+
 
 ### Install PyMOL wheel with the Python interpreter used to install CCTBX (Windows only)
 
@@ -384,16 +514,39 @@ Supplement this protocol with the following commands.
 ```bash
 /usr/local/miniconda3/bin/conda install -p /usr/local/cctbx-dev-2130/conda_base conda-forge::juptyer
 /usr/local/miniconda3/bin/conda install -p /usr/local/cctbx-dev-2130/conda_base conda-forge::juptyerlab=2.2.0
+````
+
+
+
+
+```bash
 /usr/local/miniconda3/bin/pip install jupyterlab-snippets-multimenus
 /usr/local/miniconda3/bin/ipython kernel install --name pymolcctbx --user
+```
+
+
+
+
+```bash
 /usr/local/miniconda3/bin/jupyter --path
 cd ~.local/share/jupyter # change as per Data line in output from prior comment
 mkdir multimenus_snippets
 cd multimenus_snippets
-git clone https://github.com/MooersLab/juptyerlabpymolcctbx.git cctbx
-git clone https://github.com/MooersLab/juptyerlabpymolcctbxplus.git cctbx+
-git clone https://github.com/MooersLab/juptyerlabpymolpysnips.git pymol
-git clone https://github.com/MooersLab/juptyerlabpymolpysnipsplus.git pymol+
+```
+
+
+
+```bash
+git clone https://github.com/MooersLab/jupyterlabcctbxsnips.git cctbx
+git clone https://github.com/MooersLab/jupyterlabcctbxsnipsplus.git cctbx+
+git clone https://github.com/MooersLab/jupyterlabpymolpysnips.git pymol
+git clone https://github.com/MooersLab/jupyterlabpymolpysnipsplus.git pymol+
+```
+
+XXXXXXXXXXX
+
+```bash
+cd ~/
 /usr/local/miniconda3/bin/jupyter lab
 ```
 
