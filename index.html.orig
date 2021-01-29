@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<head>
+<!-- official OU colors:  crimson #4F1315 cream #FDF908  source: https://alumni.ou.edu/home/webcomm/webguide/designconsiderations.html -->
+<!-- off white #f5f4f0   reddish slate #E4D2C1  OU brickred #4F1315   light green #FFEFB2  light blue #F6F8FF   light-green #fceeaf   royal blue #0D2A70   light-green #FFFCCC  light gray F6F4F0 -->
+<!--<body bgcolor=#FDF9D8  style="font-family:arial;font-size:15px"> -->
+<link rel="stylesheet" href="style.css">
+<style type="screen.css">
+    <style>
+      a {
+        text-decoration: none;
+      }
+      a:link {
+        color: #6b5b95;
+      }
+      a:visited {
+        color: #feb236;
+      }
+      a:hover {
+        color: #d64161;
+      }
+</style>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<!-- Format code blocks. Must use code tag inside of pre tags to get the block effect-->
+<style type="text/css">
+	pre code {
+	  background-color: #eee;
+	  border: 1px solid #999;
+	  display: block;
+	  padding: 20px;
+	}
+</style>
+
+
+<!-- Format the vertical spacing in lists. 	    border:1px solid grey;-->
+<style type="text/css">
+	li{
+	    margin-top: 10px;
+	}
+
+	li:first-child {
+	    margin-top:0;
+	}
+</style>
+
+<!-- Format table -->
+
+<style>
+<!--
+table.table1 {
+  border:1px solid #0F2080;
+  width:100%;
+  table-layout:fixed;
+}
+
+table.table1 caption {
+	font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 240%;
+    padding: 5px;
+    font-weight: bold;
+}
+
+
+table.table1 tbody>tr>:nth-child(1){
+ color:#0F2080;
+ text-align:center;
+ font-size: 2em;
+ width: 40;
+}
+
+table.table1 tbody>tr>:nth-child(2){
+ text-align:center;
+ width: 200;
+}
+
+table.table1 tbody>tr>:nth-child(3){
+ color:#0F2080;
+ text-align:left;
+ padding: 10px;
+ font-size: 1.2em;
+ word-wrap:break-word;
+ width: 200;
+}
+
+table.table1 th { 
+	font-size: 1.4em;
+	border:1px solid  #0F2080; 
+	text-align:center;
+}
+
+table.table1 td{
+	border:1px solid;
+	color: #0F2080; 
+}
+
+
+
+table.table2 {
+    border:1px solid black;
+    width:100%;
+    table-layout:fixed;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.table2 tbody>tr>:nth-child(1){
+ color:black;
+ text-align:left;
+ font-size: 1em;
+ border: 1px solid black;
+ padding: 8px;
+ width: 80px;
+}
+
+table.table2 tbody>tr>:nth-child(2){
+    color:black;
+    text-align:left;
+    font-size: 1em;
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+    width: 300px;
+}
+
+table.table2 th { 
+	font-size: 1.0em;
+	border:1px solid black; 
+	text-align:left;
+}
+
+table.table2 tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+-->
+</style>
+
+
+<!--
+table.table2 td, th {
+  border: 1px solid  #A95AA1;
+  text-align: left;
+  padding: 8px;
+}
+-->
+
+
+
+<style type="text/css">
+<!--
+ .tab { margin-left: 25px; }
+-->
+</style>
+
+
+<!-- tab a section -->
+<STYLE TYPE="text/css">
+<!--
+.indented
+ {
+ padding-left: 50pt;
+ padding-right: 50pt;
+ }
+-->
+</STYLE>
+
+<!-- tab a section -->
+<STYLE TYPE="text/css">
+
+ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+</STYLE>
+
+<!-- A nice ligth grey: bgcolor=#f5f4f0  -->
+</head>
+<body style="font-family:Arial, Helvetica, sans-serif; font-size:15px">
+
+
+<<<<<<< HEAD
+<h1> <em>cctbxsnips:</em> CCTBX Script Writing with Code Templates</h1>
+
+
+
+<h2><a href="#Snippet Lists">List of snippets by category and file stem name</a></h2>
+=======
+<h1> <em>jupyterlabcctbxsnips:</em> CCTBX Script Writing with Code Templates</h1>
+
+
+<h2><a name='categories'>List of snippets by category</a></h2>
+>>>>>>> c4fb024e4ce7498907bc16a2b8c5101ecd0d22d8
+  
+<ul>
+<li><a href="#IOTBX"> IOTBX</a></li>
+<li><a href="#MMTBX"> MMTBX</a></li>
+<li><a href="#MillerArrays"> MillerArrays</a></li>
+<li><a href="#MtzObjects"> MtzObjects</a></li>
+<li><a href="#XrayDataPlots"> XrayDataPlots</a></li>
+<li><a href="#commandLineTools"> commandLineTools</a></li>
+<li><a href="#conda"> conda</a></li>
+<li><a href="#gemmi">gemmi</a></li>
+</ul>
+
+
+<link rel="stylesheet" href="style.css">
+	
+<a name='IOTBX'> <h3>IOTBX:</h3> </a>
+<table class="table2">
+<thead>
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
+</thead>
+<tbody>
+<tr><td>extractCrystalSymmetry</td><td>Extract crystal symmetry from mtz file.             </td></tr>
+<tr><td>fetchAtomicCif        </td><td>Fetch  atomic coordinates from RCSB in mmCIF format.</td></tr>
+<tr><td>fetchFASTA            </td><td>Fetch fasta file from RCSB.                         </td></tr>
+<tr><td>fetchPDB              </td><td>Fetch pdb file from RCSB in PDB format.             </td></tr>
+<tr><td>fetchXrayCif          </td><td>Fetch X-ray data from RCSB in mmCIF format.         </td></tr>
+<tr><td>symmetryFromPDB       </td><td>Print the symmetry from a PDB file.                 </td></tr>
+</tbody>
+</table>
+<a href=#categories>Return to list of snippet categories near top.</a>
+
+
+<a name='MMTBX'> <h3>MMTBX:</h3> </a>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
+</thead>
+<tbody>
+<tr><td>makeMaps     </td><td>Read in mtz and pdb file and write map coefficients to a separate mtz file.</td></tr>
+</tbody>
+</table>
+<a href=#categories>Return to list of snippet categories near top.</a>
+
+
+<a name='MillerArrays'> <h3>MillerArrays:</h3> </a>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
+</thead>
+<tbody>
+<tr><td>FsigmaFbyabsLindex             </td><td>L-plot                                                                                       </td></tr>
+<tr><td>changeMtzColumns               </td><td>Read in mtz file and write out with fewer columns.                                           </td></tr>
+<tr><td>cns2mtz                        </td><td>Miller arrays to convert CNS reflection file into an mtz file                                </td></tr>
+<tr><td>computeAllMillerIndices        </td><td>Compute all possible Miller indices.                                                         </td></tr>
+<tr><td>computeAllMillerIndicesASU     </td><td>Compute all possible Miller indices in the ASU.                                              </td></tr>
+<tr><td>computeAllMillerIndicesUnitCell</td><td>Build miller indices given unit cell and resolution limit.                                   </td></tr>
+<tr><td>extractReflectionInShell       </td><td>Extract the reflections in a shell.                                                          </td></tr>
+<tr><td>extractReflectionMtzFile       </td><td>Extract the reflections from a mtz file.                                                     </td></tr>
+<tr><td>millerArray2Dictionary         </td><td>Set up the arrays as dictionaries                                                            </td></tr>
+<tr><td>millerArrayAnomalousSignal     </td><td>Return the anomalous signal in a specified Miller array.                                     </td></tr>
+<tr><td>millerArrayBijvoetRatios       </td><td>Print the Bijvoet ratios in a specified Miller array.  May have to average by bin first.     </td></tr>
+<tr><td>millerArrayBuildFromUnitCell   </td><td>Peter Zwart's code for generating the indices for unit cell of given symmetry and dimensions.</td></tr>
+<tr><td>millerArrayCC                  </td><td>Return CC one-half sigma tau for a given Miller array.                                       </td></tr>
+<tr><td>millerArrayCConeHalf           </td><td>Return CC one-half for a given Miller array.                                                 </td></tr>
+<tr><td>millerArrayComprehensiveSummary</td><td>Show comprehensive summary for a specified Miller array.                                     </td></tr>
+<tr><td>millerArrayCountBijvoetPairs   </td><td>Show number of bijvoet pairs for a specified Miller array.                                   </td></tr>
+<tr><td>millerArrayDictColumnLabels    </td><td>Print column labels of a Miller array dictionary.                                            </td></tr>
+<tr><td>millerArrayDictPrintColumns    </td><td>Print the column labels of Miller dictionary.                                                </td></tr>
+<tr><td>millerArrayDictionaryKeys      </td><td>Print the miller keys() of a miller dictionary.                                              </td></tr>
+<tr><td>millerArrayDminDmax            </td><td>Return the resolution range in Angstroms for a Miller array.                                 </td></tr>
+<tr><td>millerArrayExtractIntensities  </td><td>Extract just the intensities for a give Miller array and print ten rows of them.             </td></tr>
+<tr><td>millerArrayFromMtz             </td><td>Read mtz file into a Miller array.                                                           </td></tr>
+<tr><td>millerArrayHKLs                </td><td>Print all of the miller indices for a given Miller array.                                    </td></tr>
+<tr><td>millerArrayIsigma              </td><td>Return the I/sig overall for a given Miller array.                                           </td></tr>
+<tr><td>millerArrayLabels              </td><td>Print column labels in a Miller array.                                                       </td></tr>
+<tr><td>millerArrayLengths             </td><td>Print length of miller arrays (i.e., the number of datasets in a mtz file).                  </td></tr>
+<tr><td>millerArrayMapToASU            </td><td>Map generated reflections to the asu and print.                                              </td></tr>
+<tr><td>millerArrayMeasurability       </td><td>Return the `measurability` of the anomalous signal in a specified Miller array.              </td></tr>
+<tr><td>millerArrayMethods             </td><td>Print the available methods for the Miller class.                                            </td></tr>
+<tr><td>millerArrayPrintSelectRows     </td><td>Print five rows of the Iobs for a specified Miller array.                                    </td></tr>
+<tr><td>millerArrayPrintSummary        </td><td>Read mtz file into a miller array and print summary.                                         </td></tr>
+<tr><td>millerArrayPrintntensities     </td><td>Print all of the intensities for a given Miller array.                                       </td></tr>
+<tr><td>millerArrayReadMtz             </td><td>Read in the mtz file and print its column labels as a sanity check.                          </td></tr>
+<tr><td>millerArraySources             </td><td>Print the source of each miller array.                                                       </td></tr>
+<tr><td>millerArraySymmetry            </td><td>Print the crystal symmetry of each miller array.                                             </td></tr>
+<tr><td>millerArrayTruncate            </td><td>Read mtz file into a Miller array, truncate, and print summary.                              </td></tr>
+<tr><td>millerArrayUnpackIpIn          </td><td>Unpack into I(+) and I(-) for a specified Miller array.                                      </td></tr>
+<tr><td>millerArrayWavelengths         </td><td>Print wavelengths of each miller array.                                                      </td></tr>
+<tr><td>millerArrayWilsonRatio         </td><td>Show wilson ratio of miller array for a specified Miller array.                              </td></tr>
+<tr><td>millerArrayconvert2mtz         </td><td>Convert the miller array into a mtz_dataset and write out as a mtz file.                     </td></tr>
+<tr><td>millerArraydstar               </td><td>Return the resolution range in d* in a specified Miller array.                               </td></tr>
+<tr><td>millerMtzImports               </td><td>Read a mtz file into a miller array.                                                         </td></tr>
+<tr><td>normalizedStructureFactors     </td><td>Calculate quasi-normalized structure factor.                                                 </td></tr>
+<tr><td>readMtzFile                    </td><td>Read in a mtz file into a Miller array with iotbx.file_reader.                               </td></tr>
+</tbody>
+</table>
+<a href=#categories>Return to list of snippet categories near top.</a>
+
+
+<a name='MtzObjects'> <h3>MtzObjects:</h3> </a>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
+</thead>
+<tbody>
+<tr><td>mtzObjectSummary</td><td>Read mtz file into a mtz object and print summary.</td></tr>
+</tbody>
+</table>
+<a href=#categories>Return to list of snippet categories near top.</a>
+
+
+<a name='XrayDataPlots'> <h3>XrayDataPlots:</h3> </a>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
+</thead>
+<tbody>
+<tr><td>IpIm                      </td><td>Scatter plot of I(+) and (I(-). The presence of an anomalous signal is indicated by deviations from x=y.        </td></tr>
+<tr><td>plotDstarsLogMeans        </td><td>Generate the list of dstars and logMeans as lists for plotting by matplotlib.                                   </td></tr>
+<tr><td>plotDstarsMeasurability   </td><td>Generate the list of dstars and measurability as lists for plotting by matplotlib.                              </td></tr>
+<tr><td>plotFcalcsrResolutionBin  </td><td>Example of computing Fcalcs and then plotting them by resolution bin. This script uses miller arrays and binner.</td></tr>
+<tr><td>plotIntensityResolutionBin</td><td>Miller arrays to plot of bin mean intensity over dstar                                                          </td></tr>
+<tr><td>plotRfactorResolutionBin  </td><td>Read in a phenix.refine mtz file. It plots the work and free R-factors by resolution bin.                       </td></tr>
+</tbody>
+</table>
+<a href=#categories>Return to list of snippet categories near top.</a>
+
+
+<a name='commandLineTools'> <h3>commandLineTools:</h3> </a>
+<table>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name</th>
+	<th WIDTH="300">Description </th>
+      </tr>  
+</thead>
+<tbody>
+<tr><td>fixPermissionsOnMacSDK</td><td>Fix permission on MacOS SDK. Adjust the version number of the sdk as needed.</td></tr>
+<tr><td>updateCLT             </td><td>Update the command line tools for Xcode on Mac OS X.                        </td></tr>
+</tbody>
+</table>
+<a href=#categories>Return to list of snippet categories near top.</a>
+
+
+<a name='conda'> <h3>conda</h3> </a>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
+</thead>
+<tbody>
+<tr><td>condaInstall                </td><td>The conda commands to install cctbx with the jupyter notebook, pandas, and xarray.                                                                                                                                                                                                                   </td></tr>
+<tr><td>condaInstall2               </td><td>The conda commands to remove old env and create a new one for  cctbx.                                                                                                                                                                                                                                </td></tr>
+<tr><td>condaInstall4Ununtu         </td><td>Enter this snippet on the command line in an empty directory.                                                                                                                                                                                                                                        </td></tr>
+<tr><td>condaInstallCCTBXInsidePyMOL</td><td>Install cctbx inside PyMOL. This protocol worked on a Mac OS.                                                                                                                                                                                                                                        </td></tr>
+<tr><td>condaListEnvs               </td><td>List the currently available envs.
+The bang (!) enables running this command in a Juptyer Notebook.
+Delete the bang to run the command in the terminal.                                                                                                                                                                                                                                                                                                      </td></tr>
+<tr><td>condaRemove                 </td><td>The conda commands to remove cctbx37 env.                                                                                                                                                                                                                                                            </td></tr>
+<tr><td>condaRemoveEnv              </td><td>Remove a specified env.
+The bang (!) enables running this command in a Juptyer Notebook.
+Delete the bang to run the command in the terminal.                                                                                                                                                                                                                                                                                                      </td></tr>
+<tr><td>eigenvalues                 </td><td>The commands to find the eigenvalues and eigenvectors on a tensor. The code is from a post to cctbxbb on 10 December 2020 by Richard Gildea in a reply to Robert Oeffner about code in cctbx for finding eigenvalues and eigenvectors. Robert was requesting the analog in cctbx to scipy.linalg.eig.</td></tr>
+<tr><td>gemmiInstall                </td><td>Command to install gemmi (https://github.com/project-gemmi/gemmi).
+Documentation is located here (https://gemmi.readthedocs.io/en/latest/install.html).                                                                                                                                                                                                                                                                                                      </td></tr>
+<tr><td>testCCTBX                   </td><td>Enter this snippet on the command line in an empty directory.                                                                                                                                                                                                                                        </td></tr>
+<tr><td>testCCTBXpython37           </td><td>Bash script to test new install with Python3.7.                                                                                                                                                                                                                                                      </td></tr>
+<tr><td>testCCTBXpython38           </td><td>Bash script to test new install with Python3.8.                                                                                                                                                                                                                                                      </td></tr>
+</tbody>
+</table>
+<a href=#categories>Return to list of snippet categories near top.</a>
+
+
+<a name='gemmi'> <h3>gemmi</h3> </a>
+<table class="table2">
+<thead>	
+       <tr>
+        <th WIDTH="80">Filestem Name </th>
+	<th WIDTH="300">Description </th>
+      </tr>  
+</thead>
+<tbody>
+<tr><td>pattersonContourMap</td><td>Read in a mtz file with iotbx.file_reader.</td></tr>
+</tbody>
+</table>
+<a href=#categories>Return to list of snippet categories near top.</a>
+
+</Body>
+</HTML>
+
