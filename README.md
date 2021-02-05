@@ -112,7 +112,7 @@ The I(+) vs I(-) plot below was made after reading the X-ray data into a cctbx M
 The I(+) and I(-) were eventually read into separate lists.
 We plot the two lists against each other in a scatter plot.
 
-<p align="center"><img src="./images/Fig6IpImPlot.png" alt="HTML5 Icon" style="width:535px;height:1027px;"></p>
+<p align="center"><img src="./images/Fig2IpImPlot.png" alt="HTML5 Icon" style="width:535px;height:1027px;"></p>
 
 There are two advanced Matplotlib features in this plot.
 First, the imported `MultipleLocator` function enforced even distribution of the tick labels.
