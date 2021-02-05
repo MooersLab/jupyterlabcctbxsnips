@@ -488,7 +488,7 @@ Before updating `PyMOL`, rename the old version to avoid overwriting it.
 Appending the version number (e.g., `PyMOL241.app`) will not impede its operation.
 
 
-### Install PyMOL wheel with the Python interpreter used to install CCTBX (Windows only)
+### Install Open -source PyMOL wheel with the Python interpreter used to install CCTBX (Windows only)
 
 A fourth protocol is restricted to Windows.
 Wheel files for installing PyMOL are available for [download](https://www.lfd.uci.edu/~gohlke/pythonlibs/\#pymol-open-source).
@@ -548,7 +548,10 @@ XXXXXXXXXXX
 ```bash
 cd ~/
 /usr/local/miniconda3/bin/jupyter lab
-```
+```### Open Source PyMOL in Ubuntu and CCTBX and JuptyerLab from Anaconda
+
+
+
 
 
 ## Quick check of the installation
