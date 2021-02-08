@@ -53,6 +53,7 @@ The selection of a snippet file by clicking on it with the left-mouse button ins
 The millerArrayFromMtz.py snippet at the bottom of the pulldown menu was selected and inserted in the figure below. 
 Commented lines have text that describes what this snippet does. 
 The code in this cell would be executed by entering Shift-Enter.
+
 <p align="center"><img src="./images/Fig2Pulldown.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
 
 ## Some simple examples
