@@ -39,7 +39,7 @@ The README.md contains the instaltion instructions for only the **jupyterlabcctb
 
 
 The figure below shows part of the cascading menus for the **cctbx** library after it has been installed successfully.
-The submenus correspond to the names of subfolders in the cctbx folder in the multimenus_snippets folder, which you create inside of the Jupyter folder in your local library folder (i.e., `~/Library` on the Mac).
+The submenus correspond to the names of subfolders in the **cctbx** folder in the multimenus_snippets folder, which you create inside of the Jupyter folder in your local library folder (i.e., `~/Library` on the Mac).
 Each ultimate menu item is a Python snippet file. 
 The selection of a snippet file by clicking on it with the left-mouse button inserts its content into a new cell below the current cell. 
 The millerArrayFromMtz.py snippet at the bottom of the pulldown menu was selected and inserted in the figure below. 
@@ -58,12 +58,12 @@ The mtz file contains data for SirA-like protein (DSY4693) from Desultobacterium
 
 <p align="center"><img src="./images/Fig5mtzSummary.png" alt="HTML5 Icon" style="width:517px;height:727px;"></p>
 
-The I(+) vs I(-) plot below was made after reading the X-ray data into a cctbx Miller array, a data structure designed for X-ray data.
+The I(+) vs I(-) plot below was made after reading the X-ray data into a **cctbx** Miller array, a data structure designed for X-ray data.
 The I(+) and I(-) were eventually read into separate lists.
 We plot the two lists against each other in a scatter plot.
 This plot was adapted from an example in the [ReciprocalSpaceship project](https://github.com/Hekstra-Lab/reciprocalspaceship) from the Hekstra Lab.
 This new project takes a more Pythonic approach. 
-For example, it uses the Pandas package to manage diffraction data whereas cctbx uses a special C++ data structure for diffraction data.
+For example, it uses the Pandas package to manage diffraction data whereas **cctbx** uses a special C++ data structure for diffraction data.
 A recent preprint about the ReciprocalSpaceship project can be found here (https://www.biorxiv.org/content/10.1101/2021.02.03.429617v1.full.pdf).
 
 
@@ -326,7 +326,7 @@ I can be reached via the Issue tab above or via e-mail: `blaine-mooers at ouhsc.
 
 <a id="citation"><h2>Citation</h2></a>
 
-If you use this library to prepare a publication, please cite the cctbx project and this site. See the *Citation.md* file above.
+If you use this library to prepare a publication, please cite the **cctbx** project and this site. See the *Citation.md* file above.
 
 [Return to Table of Contents](#table-of-contents)
 
