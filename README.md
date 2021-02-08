@@ -6,14 +6,14 @@
 
 This readme file serves this GitHub site and three others: [jupyterlabcctbxsnipsplus](https://github.com/MooersLab/jupyterlabcctbxsnipsplus), [jupyterlabpymolpysnips](https://github.com/MooersLab/jupyterlabpymolpysnips), and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus). 
 
-An associated GitHub Pages list the snippet names and decriptions by <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
+An associated GitHub Pages list the snippet names and descriptions by <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
 
 
 ## Introduction
 
 The PyMOL is a powerful and popular molecular graphics program. 
 The Computational Crystallography Toolbox (CCTBX) is the open-source part of the Phenix project. 
-JuptyerLab is an Integrated Development Environment (IDE) for editing Jupyter Notebooks. 
+JupyterLab is an Integrated Development Environment (IDE) for editing Jupyter Notebooks. 
 Jupyter Notebooks support reproducible computational work in structural biology with CCTBX and PyMOL. 
 
 Jupyter Notebooks notebooks are also useful for exploring new software and deplyinging tutorials for new software. 
@@ -37,10 +37,10 @@ The open circle by `pc38` means that the kernel is running.
 
 The column at the left margin shows that the `jupyterlab-snippets-multimenus` extension has been installed.
 The menubar should have `cctbx cctbx+ pymol pymol+` listed between `Kernel` and `Tabs`. 
-Cell [1] in the Juptyer Notebook has been executed. 
+Cell [1] in the Jupyter Notebook has been executed. 
 The execution imported the `map_model_manager` class from CCTBX.
 No error messages were returned.
-Cell [2] imported the `cmd` class from pymol.
+Cell [2] imported the `cmd` class from the pymol package.
 No error messages were returned.
 Cell [3] shows the use of bang to run a bash command. 
 In this case, the Python interpreter is being used to return documentation to the area below the cell
@@ -153,7 +153,7 @@ This message is misleading when both programs are already installed.
 Run `jupyter serverextension enable --py jupyterlab --user` to solve this problem. 
 
 The extension `jupyterlab-snippets-multimenus` is not compatible with JuptyerLab version 3.0.0.
-The JuptyerLab version 2.2.0 has to be installed instead.
+The JupyterLab version 2.2.0 has to be installed instead.
 
 If trouble emerges, try another approach.
 To remove a broken conda env, enter `conda env remove --name <env name>`.
@@ -177,9 +177,7 @@ It eliminates the need to switch between kernels in one notebook.
 The protocol worked on a fresh instance on Ubuntu 20.04.
 It also works on Mac OSX.
 If you have installed cctbx in the past, be sure to comment out the LIBTBX_DIR environment in your .bashrc or .zshrc file.
-If you have intall juputer in the past, you may want to remove the old configuration files in ~/.jupyter if
-
-, but  although I had to move my `/usr/local/include` directory to avoid conflicts. 
+If you have installed Jupyter in the past, you may want to remove the old configuration files in ~/.jupyter if you run into trouble.
 
 First, update the existing software on Ubuntu and install Node.js and git.
 
@@ -200,7 +198,7 @@ One conda command with a long argument list is run to install Jupyter, PyMOL, an
 Here, the environment name `pc37` represents `pymol-cctbx-python3.7`.
 The shorthand name for the environment reduces the typing required when using this environment.
 Next, activate this new environment and install verion 2.2.0 of JupyterLab.
-The newer versions of JuptyerLab do not work with the jupyterlab-snippets-multimenus extensions that we want to install and use to manage the snippets.
+The newer versions of JupyterLab do not work with the jupyterlab-snippets-multimenus extensions that we want to install and use to manage the snippets.
 
 ```bash
 conda create -n pc37 python=3.7 schrodinger::pymol-bundle=2.4.1 conda-forge::cctbx-base conda-forge::jupyter
@@ -214,7 +212,7 @@ pip install jupyterlab-snippets-multimenus
 jupyter lab build
 ```
 
-Run the first command to get a list of paths to the librairies.
+Run the first command to get a list of paths to the libraries.
 
 Select the top option under Data.
 This is where the libraries will be stored.
@@ -246,7 +244,7 @@ These annotations may become an annoyance for experienced users.
 You can also download each repository as a zip file. 
 
 
-Change directories back to your home directory and start up JuptyerLab.
+Change directories back to your home directory and start up JupyterLab.
 No error messages should appear in the terminal.
 The menu bar in JupyterLab should contain the items `cctbx`, `cctbx+`, `pymol` and `pymol+`.
 
@@ -260,8 +258,8 @@ If there are irresolvable error messages, remove the broken environment with the
 This first protocol has the upside of using one kernel to call CCTBX and PyMOL and the downside of possible disruptions by updates to either PyMOL or CCTBX.
  
 The following commands may help if you run into trouble. 
-The first command registers jupuyterlab as an extension.
-The second command cleans up the build of jupyterlab and can be run before `jupyter lab build`.
+The first command registers JupyterLab as an extension.
+The second command cleans up the build of JupyterLab and can be run before `jupyter lab build`.
 
 ```bash
 jupyter serverextension enable --py jupyterlab --user
@@ -315,7 +313,7 @@ Anaconda will sometimes degrade `Node.js` to around version 6 when installing so
 
 A prior installation of `JuptyerLab=3.0.0` can cause trouble.
 Run `jupyter serverextension enable --py jupyterlab --user` to reset the configuration for `JupyterLab=2.2.0`.
-If desparate, delete the configuration in `~/.juptyer` and reinstall.
+If disparate, delete the configuration in `~/.juptyer` and reinstall.
 
 
 ### PyMOL and CCTBX have separate Python interpreters from Anaconda
@@ -399,7 +397,7 @@ cd ~/
 /Applications/PyMOL.app/Contents/bin/jupyter lab 
 ```
 
-After starting JuptyerLab, select either the `pymol` kernel or the `cctbx37`.
+After starting JupyterLab, select either the `pymol` kernel or the `cctbx37`.
 
 
 ### Install CCTBX inside of PyMOL
@@ -424,13 +422,13 @@ Enable the JupyterLab server extension.
 /Applications/PyMOL.app/Contents/bin/jupyter serverextension enable --py jupyterlab --user
 ```
 
-Create a Juptyer kernel named `pymol`.
+Create a Jupyter kernel named `pymol`.
 
 ```bash
 /Applications/PyMOL.app/Contents/bin/ipython kernel install --name pymol --user
 ```
 
-Install the JuptyerLab extension with `pip`.
+Install the JupyterLab extension with `pip`.
 
 ```bash
 /Applications/PyMOL.app/Contents/bin/pip install jupyterlab-snippets-multimenus
@@ -551,7 +549,7 @@ XXXXXXXXXXX
 ```bash
 cd ~/
 /usr/local/miniconda3/bin/jupyter lab
-```### Open Source PyMOL in Ubuntu and CCTBX and JuptyerLab from Anaconda
+```### Open Source PyMOL in Ubuntu and CCTBX and JupyterLab from Anaconda
 
 
 
