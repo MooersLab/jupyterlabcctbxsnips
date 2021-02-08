@@ -1,6 +1,8 @@
 # jupyterlabcctbxsnips
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg)](https://doi.org/10.5281/zenodo.4429336)
+![Version](https://img.shields.io/static/v1?label=jupyterlabcctbxsnips&message=0.2&color=brightcolor)
+
 
 This readme file serves this GitHub site and three others: [jupyterlabcctbxsnipsplus](https://github.com/MooersLab/jupyterlabpymolcctbxplus), [jupyterlabpymolpysnips](https://github.com/MooersLab/jupyterlabpymolpysnips), and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus). 
 
@@ -112,7 +114,7 @@ The I(+) vs I(-) plot below was made after reading the X-ray data into a cctbx M
 The I(+) and I(-) were eventually read into separate lists.
 We plot the two lists against each other in a scatter plot.
 
-<p align="center"><img src="./images/Fig2IpImPlot.png" alt="HTML5 Icon" style="width:535px;height:1027px;"></p>
+<p align="center"><img src="./images/Fig6IpImPlot.png" alt="HTML5 Icon" style="width:535px;height:1027px;"></p>
 
 There are two advanced Matplotlib features in this plot.
 First, the imported `MultipleLocator` function enforced even distribution of the tick labels.
