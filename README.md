@@ -54,7 +54,7 @@ The millerArrayFromMtz.py snippet at the bottom of the pulldown menu was selecte
 Commented lines have text that describes what this snippet does. 
 The code in this cell would be executed by entering Shift-Enter.
 
-<p align="center"><img src="./images/Fig2Pulldown.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
+<p align="center"><img src="./images/Fig1Pulldown.png" alt="HTML5 Icon" style="width:606px;height:404px;"></p>
 
 ## Some simple examples
 
