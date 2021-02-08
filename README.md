@@ -1,21 +1,23 @@
-# jupyterlabcctxsnips: Templates for writing and running cctbx in Jupyter Notebooks.
+# jupyterlabcctbxsnips: Templates for writing and running cctbx in Jupyter Notebooks.
 
 [[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg)](https://doi.org/10.5281/zenodo.4429336)
 ![Version](https://img.shields.io/static/v1?label=jupyterlabcctbxsnips&message=0.2&color=brightcolor)
 
-The **cctbx** (Computational Crystallography Toolbox)[https://github.com/cctbx/cctbx.github.io] is a core package for computational crystallography.
+The **cctbx** (Computational Crystallography Toolbox)[https://github.com/cctbx/cctbx.github.io] is a core package for computational crystallography that has been developed over the past two decades that the Lawrence-Berkley National Laboratory.
 It contains the open source components of the (Phenix project)[https://phenix-online.org].
-It has C++ routines wrapped in Python to ease using it to develop new software tools.
-Because it is can be run with Python, it can also be run from Jupyter Notebooks.
-To ease the running of **cctbx** in Jupyter Notebooks, we developed the jupyterlabcctxsnips of code templates.
+It has C++ routines wrapped in Python to ease using it to develop new software tools for analyzing atomic coordinates and diffraction data.
+Because it is can be run with Python, it can also be run from Jupyter Notebooks, the defacto computing platform for data science.
+To ease the running of **cctbx** in Jupyter Notebooks, we developed the **jupyterlabcctbxsnips** of code templates.
 Access to the code templates or snippets requires the editing of the Jupyter Notebook from inside of JupyterLab, a browser based IDE for Jupyter Notebooks.
 
 
-This readme file serves this GitHub site and three related sites: [jupyterlabcctbxsnipsplus](https://github.com/MooersLab/jupyterlabcctbxsnipsplus), [jupyterlabpymolpysnips](https://github.com/MooersLab/jupyterlabpymolpysnips), and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus). 
-As you might have expected, **PyMOL** and **cctbx** can be run together in the same Jupyter Notebook. 
+This readme file serves this GitHub site.
+There are three related sites: [jupyterlabcctbxsnipsplus](https://github.com/MooersLab/jupyterlabcctbxsnipsplus), [jupyterlabpymolpysnips](https://github.com/MooersLab/jupyterlabpymolpysnips), and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus). 
+As you might have deduced, **PyMOL** and **cctbx** can be run together in the same Jupyter Notebook. 
 This is best done when they share the same Python interpeter.
-See the associated GitHub Page for more information and for list the snippet names and descriptions by <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
+See the associated GitHub Page for more information about running these two programs together and for list the snippet names and descriptions by <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
+The README.md contains the instaltion instructions for only the **jupyterlabcctbxsnips** and **jupyterlabcctbxsnipsplus** snippet libraries.
 
 <a id="table-of-contents"><h2>Table of Contents</h2></a>
 
@@ -36,8 +38,8 @@ See the associated GitHub Page for more information and for list the snippet nam
 <a id="motivation"><h2>Motivations for this project</h2></a>
 
 
-The figure below shows part of the cascading menus for the cctbx library after it has been installed successfully.. 
-The submenus correspond to the names of subfolders in the cctbx folder in the multimenus_snippets folder, which you create inside of the Jupyter folder in your local library folder (i.e., ~/Library on the Mac).
+The figure below shows part of the cascading menus for the **cctbx** library after it has been installed successfully.
+The submenus correspond to the names of subfolders in the cctbx folder in the multimenus_snippets folder, which you create inside of the Jupyter folder in your local library folder (i.e., `~/Library` on the Mac).
 Each ultimate menu item is a Python snippet file. 
 The selection of a snippet file by clicking on it with the left-mouse button inserts its content into a new cell below the current cell. 
 The millerArrayFromMtz.py snippet at the bottom of the pulldown menu was selected and inserted in the figure below. 
