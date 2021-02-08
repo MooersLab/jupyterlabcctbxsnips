@@ -4,7 +4,7 @@
 ![Version](https://img.shields.io/static/v1?label=jupyterlabcctbxsnips&message=0.2&color=brightcolor)
 
 
-This readme file serves this GitHub site and three others: [jupyterlabcctbxsnipsplus](https://github.com/MooersLab/jupyterlabpymolcctbxplus), [jupyterlabpymolpysnips](https://github.com/MooersLab/jupyterlabpymolpysnips), and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus). 
+This readme file serves this GitHub site and three others: [jupyterlabcctbxsnipsplus](https://github.com/MooersLab/jupyterlabcctbxsnipsplus), [jupyterlabpymolpysnips](https://github.com/MooersLab/jupyterlabpymolpysnips), and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus). 
 
 An associated GitHub Pages list the name snippets by <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
 
