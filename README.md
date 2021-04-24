@@ -2,10 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Version](https://img.shields.io/static/v1?label=jupyterlabcctbxsnips&message=0.2&color=brightcolor)
-
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg)](https://doi.org/10.5281/zenodo.4429336)
-<a href="https://doi.org/10.5281/zenodo.4429336"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg" alt="DOI"></a>
-
 
 The **cctbx** <a href="https://github.com/cctbx/cctbx.github.io"> Computational Crystallography Toolbox </a> is a core package for computational crystallography that has been developed over the past two decades that the Lawrence-Berkley National Laboratory.
 It contains the open source components of the <a href="https://phenix-online.org"> Phenix project</a>.
@@ -181,6 +178,31 @@ jupyter lab
 
 
 [Return to Table of Contents](#table-of-contents)
+
+
+JupyterLab can also use the **jupyterlab-snippets** extension to make the snippets available via a **snippets** pull-down menu.
+This package can be installed by conda, pip, or by the extension manager in Jupyter Lab.
+
+Assuming that **JupyterLab**, **jupyterlab-snippets**, and PyMOL are already installed, run the following commands one line at a time:
+
+```bash
+jupyter --path
+cd ~/.local/share/jupyter # change as per output from prior line. Use cd ~/Library/Jupyter on the Mac.
+mkdir snippets
+cd snippets
+git clone https://github.com/MooersLab/jupyterlabcctbxsnips.git pymol
+git clone https://github.com/MooersLab/jupyterlabcctbxsnipsplus.git pymol+
+```
+
+When you open **JupyterLab**, you will find a **snippet** pull-down menu on the JupyterLab menu-bar.
+There will be a **pymol** sub-menu and a **pymol+** sub-menu under this pull-down.
+
+JupyterLab needs to be version >=2.2.0 for **jupyterlab-snippets** to run. 
+The current version of **JupyterLab** is >3.0.
+
+**Node.js** can be downloaded from the developer's site, or it can be installed with a package manager.
+It needs to be more recent than version 10.0.0 
+
 
 
 <a id="configuration-setup"><h2>Configuration Setup</h2></a>
