@@ -4,7 +4,7 @@
 
 ![Version](https://img.shields.io/static/v1?label=jupyterlabcctbxsnips&message=0.2&color=brightcolor)
 
-![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg)(https://doi.org/10.5281/zenodo.4429336)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg)](https://doi.org/10.5281/zenodo.4429336)
 
 
 
