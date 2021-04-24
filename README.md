@@ -195,7 +195,7 @@ git clone https://github.com/MooersLab/jupyterlabcctbxsnipsplus.git pymol+
 ```
 
 When you open **JupyterLab**, you will find a **snippet** pull-down menu on the JupyterLab menu-bar.
-There will be a **pymol** sub-menu and a **pymol+** sub-menu under this pull-down.
+There will be a **cctbx** sub-menu and a **cctbx+** sub-menu under this pull-down.
 
 JupyterLab needs to be version >=2.2.0 for **jupyterlab-snippets** to run. 
 The current version of **JupyterLab** is >3.0.
@@ -289,10 +289,6 @@ libtbx.python $CONDA_PREFIX/lib/python3.8/site-packages/mmtbx/run_tests.py
 libtbx.python $CONDA_PREFIX/lib/python3.8/site-packages/cctbx_website/run_tests.py
 libtbx.python $CONDA_PREFIX/lib/python3.8/site-packages/gltbx/run_tests.py
 ```
-
-
-
-
 
 [Return to Table of Contents](#table-of-contents)
 
