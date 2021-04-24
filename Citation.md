@@ -1,6 +1,7 @@
 Insert in the main body of the paper something like this:
 
 We used the jupyterlabcctbxsnips library (https://github.com/MooersLab/jupyterlabcctbxsnips) to support using cctbx (appropriate citations) in JupuyterLab ().
+A newsletter article about this project is found here [Mooers, B.H.M. (2021) Running CCTBX and PyMOL in the same Jupyter Notebook. Computational Crystallography Newsletter  12, 26-32.](http://phenix-online.org/newsletter/CCN_2021_01.pdf#page=26).
 
 
 To find the appropriate citation(s), you will have to dig around in the source code of the modules that you used. 
