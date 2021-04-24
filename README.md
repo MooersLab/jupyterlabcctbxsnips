@@ -83,6 +83,9 @@ Second, the imported `FunctionFormatter` added the commas to the thousandths pla
 |------------|--------------|-----------------------------|
 | [CCTBX](https://github.com/cctbx/cctbx_project) |   2.4.0    | Molecular graphics program         | 
 | Python | 3.7-3.9      |  Programming language          |
+| [JupyterLab](https://pypi.org/project/jupyterlab/)                                          | >=2.0    | A IDE for editing Jupyter Notebooks.                                                             |
+| [jupyterlab-snippets](https://github.com/QuantStack/jupyterlab-snippets)                    | 0.4.0    | Required extension                                                                                |
+| or this alternate pair of programs                                                          |          |                                                       
 | [JupyterLab](https://pypi.org/project/jupyterlab/)  | 2.2.0   | An IDE for editing Jupyter Notebooks. Version 3.0 does not work with jupyterlab-snippets-multimenus|
 | [jupyterlab-snippets-multimenus](https://pypi.org/project/jupyterlab-snippets-multimenus/) | 0.1.2 | Required extension |
 | [Node.js(https://nodejs.org/en/)     |  >=10.0.0      | Required by Jupyter and many JupyterLab extensions.   |
