@@ -4,8 +4,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg)](https://doi.org/10.5281/zenodo.4429336)
 [![Version]](https://img.shields.io/static/v1?label=jupyterlabcctbxsnips&message=0.2&color=brightcolor)
 
-The **cctbx** (Computational Crystallography Toolbox)[https://github.com/cctbx/cctbx.github.io] is a core package for computational crystallography that has been developed over the past two decades that the Lawrence-Berkley National Laboratory.
-It contains the open source components of the (Phenix project)[https://phenix-online.org].
+The **cctbx** <a href="https://github.com/cctbx/cctbx.github.io"> Computational Crystallography Toolbox </a> is a core package for computational crystallography that has been developed over the past two decades that the Lawrence-Berkley National Laboratory.
+It contains the open source components of the <a href="https://phenix-online.org"> Phenix project</a>.
 It has C++ routines wrapped in Python to ease using it to develop new software tools for analyzing atomic coordinates and diffraction data.
 Because it is can be run with Python, it can also be run from Jupyter Notebooks, the defacto computing platform for data science.
 To ease the running of **cctbx** in Jupyter Notebooks, we developed the **jupyterlabcctbxsnips** of code templates.
@@ -42,7 +42,7 @@ The figure below shows part of the cascading menus for the **cctbx** library aft
 The submenus correspond to the names of subfolders in the **cctbx** folder in the multimenus_snippets folder, which you create inside of the Jupyter folder in your local library folder (i.e., `~/Library` on the Mac).
 Each ultimate menu item is a Python snippet file. 
 The selection of a snippet file by clicking on it with the left-mouse button inserts its content into a new cell below the current cell. 
-The millerArrayFromMtz.py snippet at the bottom of the pulldown menu was selected and inserted in the figure below. 
+The **millerArrayFromMtz.py** snippet at the bottom of the pulldown menu was selected and inserted in the figure below. 
 Commented lines have text that describes what this snippet does. 
 The code in this cell would be executed by entering Shift-Enter.
 
@@ -61,10 +61,10 @@ The mtz file contains data for SirA-like protein (DSY4693) from Desultobacterium
 The I(+) vs I(-) plot below was made after reading the X-ray data into a **cctbx** Miller array, a data structure designed for X-ray data.
 The I(+) and I(-) were eventually read into separate lists.
 We plot the two lists against each other in a scatter plot.
-This plot was adapted from an example in the [ReciprocalSpaceship project](https://github.com/Hekstra-Lab/reciprocalspaceship) from the Hekstra Lab.
+This plot was adapted from an example in the <a href="https://github.com/Hekstra-Lab/reciprocalspaceship">ReciprocalSpaceship project</a> from the Hekstra Lab.
 This new project takes a more Pythonic approach. 
 For example, it uses the Pandas package to manage diffraction data whereas **cctbx** uses a special C++ data structure for diffraction data.
-A recent preprint about the ReciprocalSpaceship project can be found here (https://www.biorxiv.org/content/10.1101/2021.02.03.429617v1.full.pdf).
+A recent preprint about the ReciprocalSpaceship project can be found <a href="https://www.biorxiv.org/content/10.1101/2021.02.03.429617v1.full.pdf>here</a>.
 
 
 <p align="center"><img src="./images/Fig2IpImPlot.png" alt="HTML5 Icon" style="width:535px;height:1027px;"></p>
