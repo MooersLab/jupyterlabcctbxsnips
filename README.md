@@ -13,7 +13,7 @@ Access to the code templates or snippets requires the editing of the Jupyter Not
 
 
 This readme file serves this GitHub site.
-There are three related sites: [jupyterlabcctbxsnipsplus](https://github.com/MooersLab/jupyterlabcctbxsnipsplus), [jupyterlabpymolpysnips](https://github.com/MooersLab/jupyterlabpymolpysnips), and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus). 
+There are three related sites: <a href="https://github.com/MooersLab/jupyterlabcctbxsnipsplus">jupyterlabpymolpysnips</a>, and [jupyterlabpymolpysnipsplus](https://github.com/MooersLab/jupyterlabpymolpysnipsplus). 
 As you might have deduced, **PyMOL** and **cctbx** can be run together in the same Jupyter Notebook. 
 This is best done when they share the same Python interpeter.
 See the associated GitHub Page for more information about running these two programs together and for list the snippet names and descriptions by <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
