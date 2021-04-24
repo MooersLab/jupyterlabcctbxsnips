@@ -4,8 +4,7 @@
 
 ![Version](https://img.shields.io/static/v1?label=jupyterlabcctbxsnips&message=0.2&color=brightcolor)
 
-![[DOI][https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg]](https://doi.org/10.5281/zenodo.4429336)
-
+<a href="https://doi.org/10.5281/zenodo.4429336"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg" alt="DOI"></a>
 
 
 The **cctbx** <a href="https://github.com/cctbx/cctbx.github.io"> Computational Crystallography Toolbox </a> is a core package for computational crystallography that has been developed over the past two decades that the Lawrence-Berkley National Laboratory.
