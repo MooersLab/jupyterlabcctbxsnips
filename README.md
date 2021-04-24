@@ -1,9 +1,9 @@
 # jupyterlabcctbxsnips: Templates for writing and running cctbx in Jupyter Notebooks.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
 ![Version](https://img.shields.io/static/v1?label=jupyterlabcctbxsnips&message=0.2&color=brightcolor)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg)](https://doi.org/10.5281/zenodo.4429336)
 <a href="https://doi.org/10.5281/zenodo.4429336"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg" alt="DOI"></a>
 
 
