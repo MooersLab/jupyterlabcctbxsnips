@@ -1,8 +1,8 @@
 # jupyterlabcctbxsnips: Templates for writing and running cctbx in Jupyter Notebooks.
 
-[[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg)](https://doi.org/10.5281/zenodo.4429336)
-![Version](https://img.shields.io/static/v1?label=jupyterlabcctbxsnips&message=0.2&color=brightcolor)
+[![Version]](https://img.shields.io/static/v1?label=jupyterlabcctbxsnips&message=0.2&color=brightcolor)
 
 The **cctbx** (Computational Crystallography Toolbox)[https://github.com/cctbx/cctbx.github.io] is a core package for computational crystallography that has been developed over the past two decades that the Lawrence-Berkley National Laboratory.
 It contains the open source components of the (Phenix project)[https://phenix-online.org].
