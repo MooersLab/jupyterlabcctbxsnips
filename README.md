@@ -88,7 +88,7 @@ Second, the imported `FunctionFormatter` added the commas to the thousandths pla
 | or this alternate pair of programs                                                          |          |                                                       
 | [JupyterLab](https://pypi.org/project/jupyterlab/)  | 2.2.0   | An IDE for editing Jupyter Notebooks. Version 3.0 does not work with jupyterlab-snippets-multimenus|
 | [jupyterlab-snippets-multimenus](https://pypi.org/project/jupyterlab-snippets-multimenus/) | 0.1.2 | Required extension |
-| [Node.js(https://nodejs.org/en/)     |  >=10.0.0      | Required by Jupyter and many JupyterLab extensions.   |
+| [Node.js](https://nodejs.org/en/)     |  >=10.0.0      | Required by Jupyter and many JupyterLab extensions.   |
 | git        | 2.25.1  | Eases the downloading and updating of the libraries. |
 
 
