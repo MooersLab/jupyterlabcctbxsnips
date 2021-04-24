@@ -64,7 +64,7 @@ We plot the two lists against each other in a scatter plot.
 This plot was adapted from an example in the <a href="https://github.com/Hekstra-Lab/reciprocalspaceship">ReciprocalSpaceship project</a> from the Hekstra Lab.
 This new project takes a more Pythonic approach. 
 For example, it uses the Pandas package to manage diffraction data whereas **cctbx** uses a special C++ data structure for diffraction data.
-A recent preprint about the ReciprocalSpaceship project can be found <a href="https://www.biorxiv.org/content/10.1101/2021.02.03.429617v1.full.pdf>here</a>.
+A recent preprint about the ReciprocalSpaceship project can be found <a href="https://www.biorxiv.org/content/10.1101/2021.02.03.429617v1.full.pdf">here</a>.
 
 
 <p align="center"><img src="./images/Fig2IpImPlot.png" alt="HTML5 Icon" style="width:535px;height:1027px;"></p>
