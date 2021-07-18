@@ -15,9 +15,10 @@ Access to the code templates or snippets requires the editing of the Jupyter Not
 This readme file serves this GitHub site.
 There are three related sites:  <a href="https://github.com/MooersLab/jupyterlabcctbxsnipsplus">jupyterlabpymolpysnips</a>, and <a href="https://github.com/MooersLab/jupyterlabpymolpysnipsplus">jupyterlabpymolpysnipsplus</a>. 
 As you might have deduced, **PyMOL** and **cctbx** can be run together in the same Jupyter Notebook. 
-This is best done when they share the same Python interpeter.
+This is best done when they share the same Python interpeter so they can be called from the same Jupyter environment.
 See the associated GitHub Page for more information about running these two programs together and for list the snippet names and descriptions by <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
 The README.md contains the installation instructions for only the **jupyterlabcctbxsnips** and **jupyterlabcctbxsnipsplus** snippet libraries.
+This libraries were designed to be used with the jupyter-multimenu-snippets package for JupyterLab.
 
 <a id="table-of-contents"><h2>Table of Contents</h2></a>
 
@@ -213,7 +214,7 @@ The current version of **JupyterLab** is >3.0.
 **Node.js** can be downloaded from the developer's site, or it can be installed with a package manager.
 It needs to be more recent than version 10.0.0 
 
-
+Shortly, I will make available a new variant of the library that can run in JupyterLab. 
 
 <a id="configuration-setup"><h2>Configuration Setup</h2></a>
 
@@ -241,9 +242,10 @@ Select the appropriate kernel.
 Enter in the first cell `from iotbx.map_model_manager import map_model_manager` and enter `Shift-Return`.
 No error message should appear.
 
-You can also check from the terminal after activating the appropriate environment:
+You can also check from the terminal after activating your cctbx environment:
 
 ```bash
+conda activate cctbx38
 python -c 'from iotbx.map_model_manager import map_model_manager'
 ```
 
@@ -254,11 +256,20 @@ Otherwise, error messages will be printed in the terminal window.
 ### More extensive tests
 
 
-The **cctbx**installation in a conda environment can be tested by running the following bash script if installed with Python3.7.
+The **cctbx**installation in a conda environment can be tested by running the following bash script if installed with Python3.7 (use the next code block below if you installed cctbx-base with Python 3.8).
+
+Before doing the above, you should install pytest so that you can enable the running of additonal tests:
+
+```bash
+libtbx.python -m pip install pytest
+```
+
 Copy the code below to a plain text file called test.sh with a text editor.
 Make the script executable: `chmod +x test.sh`.
 Run the script as `./test.sh`.
-The tests will take about 30-60 minutes to run and most should pass.
+The tests will take about 30-60 minutes to run.
+Some tests may fail but most should pass.
+
 
 ```bash
 #! /bin/sh
