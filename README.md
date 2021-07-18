@@ -17,7 +17,7 @@ There are three related sites:  <a href="https://github.com/MooersLab/jupyterlab
 As you might have deduced, **PyMOL** and **cctbx** can be run together in the same Jupyter Notebook. 
 This is best done when they share the same Python interpeter.
 See the associated GitHub Page for more information about running these two programs together and for list the snippet names and descriptions by <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
-The README.md contains the instaltion instructions for only the **jupyterlabcctbxsnips** and **jupyterlabcctbxsnipsplus** snippet libraries.
+The README.md contains the installation instructions for only the **jupyterlabcctbxsnips** and **jupyterlabcctbxsnipsplus** snippet libraries.
 
 <a id="table-of-contents"><h2>Table of Contents</h2></a>
 
@@ -99,11 +99,18 @@ If not, they are best installed with a software package manager like Anaconda, h
 **cctbx** is most easily installed into its own environment by using Anaconda with the command `conda create -n my_env -c conda-forge cctbx-base python=3.8`.
 This command will also install Python 3.8. 
 **cctbx** also works with Python3.7.
+I have also installed cctbx successfully with Python 3.9 
+Note that the Anaconda Navigator does not support creation of new envs with Python3.9 as of July 17, 2021, so you have to do so by the command line.
+
+Sometimes the planets are in alignment and you can install cctbx-base and pymol-bundle in the same environment.
+This worked for me in January 2021, but by July 2021, there were too many dependency conflicts.
+In the latter case, install PyMOL in a separate conda env, make a Juptyer kernel for that env, and just switch kernels to use cells with PyMOL and other cells with cctbx in the same Jupyter notebook.
 
 To install **cctbx** with **PyMOL**, see the protocols on the associated<a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/">GitHub Page.</a>
 
 JupyterLab needs to be version 2.2.0 for **jupyterlab-snippets-multimenus** to run. 
-The current version of **JupyterLab** is 3.0.
+The current version of **JupyterLab** is 3.0. 
+Note that JupyterLab no longer needs an external installation of Node,=.js.
 
 **Node.js** can be downloaded from the developer's site, or it can be installed with a package manager.
 It needs to be more recent than version 10.0.0.
