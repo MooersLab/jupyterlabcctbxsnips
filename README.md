@@ -9,7 +9,7 @@ It contains the open source components of the <a href="https://phenix-online.org
 It has C++ routines wrapped in Python to ease using it to develop new software tools for analyzing atomic coordinates and diffraction data.
 Because it is can be run with Python, it can also be run from Jupyter Notebooks, the defacto computing platform for data science.
 To ease the running of **cctbx** in Jupyter Notebooks, we developed the **jupyterlabcctbxsnips** of code templates.
-Access to the code templates or snippets requires the editing of the Jupyter Notebook from inside of JupyterLab, a browser based IDE for Jupyter Notebooks.
+Access to the code templates or snippets requires the editing of the Jupyter Notebook from inside of JupyterLab <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html">, a browser based IDE for Jupyter Notebooks.
 
 
 This readme file serves this GitHub site.
