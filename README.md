@@ -4,15 +4,15 @@
 ![Version](https://img.shields.io/static/v1?label=jupyterlabcctbxsnips&message=0.2&color=brightcolor)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg)](https://doi.org/10.5281/zenodo.4429336)
 
-The **cctbx** <a href="https://github.com/cctbx/cctbx.github.io"> Computational Crystallography Toolbox </a> is a core package for computational crystallography that has been developed over the past two decades that the Lawrence-Berkley National Laboratory.
+The **cctbx** (<a href="https://github.com/cctbx/cctbx.github.io"> Computational Crystallography Toolbox </a>) is a core package for computational crystallography that has been developed over the past two decades that the Lawrence-Berkley National Laboratory.
 It contains the open source components of the <a href="https://phenix-online.org"> Phenix project</a>.
 It has C++ routines wrapped in Python to ease using it to develop new software tools for analyzing atomic coordinates and diffraction data.
 Because it is can be run with Python, it can also be run from Jupyter notebooks, the defacto computing platform for data science.
 To ease the running of **cctbx** in Jupyter notebooks, we developed the **jupyterlabcctbxsnips** of code templates.
 Access to the code templates or snippets requires the editing of the Jupyter notebook from inside of <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html"> **JupyterLab** </a>, a browser based IDE for Jupyter notebooks.
 This **JupyterLab** enables the writing or editing of a document in a pane next to the Jupyter notebook.
-This is useful for writing up documentation, protocols, tutorials, blog posts, and manuscripts.
-The document can be plain text, markdown, or LaTeX.
+This is useful for writing up documentation, protocols, tutorials, blog posts, and manuscripts next to the notebook that is being described.
+The document can be plain text, html, markdown, or LaTeX.
 
 
 This readme file serves this GitHub site.
