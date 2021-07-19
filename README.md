@@ -7,14 +7,17 @@
 The **cctbx** <a href="https://github.com/cctbx/cctbx.github.io"> Computational Crystallography Toolbox </a> is a core package for computational crystallography that has been developed over the past two decades that the Lawrence-Berkley National Laboratory.
 It contains the open source components of the <a href="https://phenix-online.org"> Phenix project</a>.
 It has C++ routines wrapped in Python to ease using it to develop new software tools for analyzing atomic coordinates and diffraction data.
-Because it is can be run with Python, it can also be run from Jupyter Notebooks, the defacto computing platform for data science.
-To ease the running of **cctbx** in Jupyter Notebooks, we developed the **jupyterlabcctbxsnips** of code templates.
-Access to the code templates or snippets requires the editing of the Jupyter Notebook from inside of JupyterLab <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html">, a browser based IDE for Jupyter Notebooks.
+Because it is can be run with Python, it can also be run from Jupyter notebooks, the defacto computing platform for data science.
+To ease the running of **cctbx** in Jupyter notebooks, we developed the **jupyterlabcctbxsnips** of code templates.
+Access to the code templates or snippets requires the editing of the Jupyter notebook from inside of <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html"> **JupyterLab** </a>, a browser based IDE for Jupyter notebooks.
+This **JupyterLab** enables the writing or editing of a document in a pane next to the Jupyter notebook.
+This is useful for writing up documentation, protocols, tutorials, blog posts, and manuscripts.
+The document can be plain text, markdown, or LaTeX.
 
 
 This readme file serves this GitHub site.
 There are three related sites:  <a href="https://github.com/MooersLab/jupyterlabcctbxsnipsplus">jupyterlabpymolpysnips</a>, and <a href="https://github.com/MooersLab/jupyterlabpymolpysnipsplus">jupyterlabpymolpysnipsplus</a>. 
-As you might have deduced, **PyMOL** and **cctbx** can be run together in the same Jupyter Notebook. 
+As you might have deduced, **PyMOL** and **cctbx** can be run together in the same Jupyter notebook. 
 This is best done when they share the same Python interpeter so they can be called from the same Jupyter environment.
 See the associated GitHub Page for more information about running these two programs together and for list the snippet names and descriptions by <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
 The README.md contains the installation instructions for only the **jupyterlabcctbxsnips** and **jupyterlabcctbxsnipsplus** snippet libraries.
@@ -24,7 +27,8 @@ This libraries were designed to be used with the jupyter-multimenu-snippets pack
 
 * [Motivation](#motivation)
 * [Tech Stack](#technology-stack)
-* [Installation](#installation)
+* [Installation of the snippet library for **JupyterLab** >= 2.2](#JupyterLab2)
+* [Installation of the snippet library with **JupyterLab** >= 3.0](#JupyterLab3)
 * [Configuration Setup](#configuration-setup)
 * [Usage](#usage)
 * [Testing](#testing)
@@ -84,10 +88,10 @@ Second, the imported `FunctionFormatter` added the commas to the thousandths pla
 |------------|--------------|-----------------------------|
 | [CCTBX](https://github.com/cctbx/cctbx_project) |   2.4.0    | Molecular graphics program         | 
 | Python | 3.7-3.9      |  Programming language          |
-| [JupyterLab](https://pypi.org/project/jupyterlab/)                                          | >=2.0    | A IDE for editing Jupyter Notebooks.                                                             |
+| [JupyterLab](https://pypi.org/project/jupyterlab/)                                          | >=2.0    | A IDE for editing Jupyter notebooks.                                                             |
 | [jupyterlab-snippets](https://github.com/QuantStack/jupyterlab-snippets)                    | 0.4.0    | Required extension                                                                                |
 | or this alternate pair of programs                                                          |          |                                                       
-| [JupyterLab](https://pypi.org/project/jupyterlab/)  | 2.2.0   | An IDE for editing Jupyter Notebooks. Version 3.0 does not work with jupyterlab-snippets-multimenus|
+| [JupyterLab](https://pypi.org/project/jupyterlab/)  | 2.2.0   | An IDE for editing Jupyter notebooks. Version 3.0 does not work with jupyterlab-snippets-multimenus|
 | [jupyterlab-snippets-multimenus](https://pypi.org/project/jupyterlab-snippets-multimenus/) | 0.1.2 | Required extension |
 | [Node.js](https://nodejs.org/en/)     |  >=10.0.0      | Required by Jupyter and many JupyterLab extensions.   |
 | git        | 2.25.1  | Eases the downloading and updating of the libraries. |
@@ -99,19 +103,18 @@ If not, they are best installed with a software package manager like Anaconda, h
 
 **cctbx** is most easily installed into its own environment by using Anaconda with the command `conda create -n my_env -c conda-forge cctbx-base python=3.8`.
 This command will also install Python 3.8. 
-**cctbx** also works with Python3.7.
-I have also installed cctbx successfully with Python 3.9 
-Note that the Anaconda Navigator does not support creation of new envs with Python3.9 as of July 17, 2021, so you have to do so by the command line.
+**cctbx** also works with Python3.7 and Python 3.9, although PyMOL does not work with Python 3.9 yet.
+Note that the Anaconda Navigator does not support creation of new envs with Python 3.9 as of July 17, 2021, so you have to do so by the command line.
 
 Sometimes the planets are in alignment and you can install cctbx-base and pymol-bundle in the same environment.
-This worked for me in January 2021, but by July 2021, there were too many dependency conflicts.
-In the latter case, install PyMOL in a separate conda env, make a Juptyer kernel for that env, and just switch kernels to use cells with PyMOL and other cells with cctbx in the same Jupyter notebook.
+This worked for me in January 2021, but by July 2021: there were too many dependency conflicts.
+In the latter case, install PyMOL in a separate conda env, make a Juptyer kernel for that env, and just switch kernels to use cells with PyMOL and other cells with **cctbx** in the same Jupyter notebook.
 
 To install **cctbx** with **PyMOL**, see the protocols on the associated<a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/">GitHub Page.</a>
 
 JupyterLab needs to be version 2.2.0 for **jupyterlab-snippets-multimenus** to run. 
 The current version of **JupyterLab** is 3.0. 
-Note that JupyterLab no longer needs an external installation of Node,=.js.
+Note that **JupyterLab**>=3,0 no longer needs an external installation of **Node.js** .
 
 **Node.js** can be downloaded from the developer's site, or it can be installed with a package manager.
 It needs to be more recent than version 10.0.0.
@@ -128,20 +131,23 @@ Multiple versions of **cctbx** can operate on a computer if they are in separate
 [Return to Table of Contents](#table-of-contents)
 
 
-
-<a id="installation"><h2>Installation of the snippet library</h2></a>
+<a id="JupyterLab2)"><h2>Installation the snippet library for **JupyterLab** 2.0 with the jupyterlab-snippets-multimenus extension</h2></a>
 
 Assuming that **git**, **JupyterLab**, **jupyterlab-snippets-multimenus**, and **cctbx** are already installed, run the following commands one line at a time.
 On the Mac, **git** is installed with the Command Line Tools.
 If you enter `git --version` in the terminal and do not get an error message, you have git installed.
 If you enter `ls /Library/Developer/CommandLineTools` and see `SDKs` as a subfolder, you have the commandline tools installed.
 
+Next, find the path to where the snippet library will be installed.
+Enter the following command to find the paths to the Jupyter libraries.
+There may be more than one path if you have several installation of Jupyter.
+
 ```bash
 jupyter --path
 ```
 
 Move to the first directory under Data.
-This will be `~/.local/share/jupyter` on Linx and  `~/Library/Jupyter` on the Mac.
+This will be `~/.local/share/jupyter` on Linux and  `~/Library/Jupyter` on Mac OS.
 
 
 ```bash
@@ -157,44 +163,44 @@ cd multimenus_snippets
 
 Use git to clone the repos into the new folders respectively.
 
-
 ```bash
 git clone https://github.com/MooersLab/jupyterlabcctbxsnips.git cctbx
 git clone https://github.com/MooersLab/jupyterlabcctbxsnipsplus.git cctbx+
 ````
 
-The snippets in the **cctbxsnips+** library have a second copy of the code in a comment with the tab stops marked as follows `${1:default value}`.
+The snippets in the **cctbxsnips+** library have a second copy of the code in a comment with the tab stops.
+Tab stops are marked as follows `${1:default value}`.
 Tab stops are sites of parameter values that may need to be edited to customize the snippet.
 In most text editors, you hit tab to advance to the next tab stop.
 **JupyterLab** does not yet support tab stops.
+
 Use the **cctbx+** library when you need guidance in editing a snippet.
 The content of the active part of the snippet is the same in both libraries.
 The commented code in the **cctbx+** snip library may annoy experienced users who do not need help with editing and who do not want the extra comments in their code.
 
-
-Alternatively, you can download the repository as a zip file by clicking on the green **code** button above.
-However, **git** eases the updating of the libraries are a later time.
+As an alternative to using **git**, you can download the repository as a zip file by clicking on the green **code** button above.
+However, **git** eases the updating of the libraries at a later time.
 You would navigate to the `multimenus_snippets/cctbx` folder and then enter `git pull` to update the library.
 This is far less painful than down downloading the library via as a zip file.
 Repeat for `cctbx+`, if needed.
 Important!
 Navigate back to your home directory before running **JupyterLab** (e.g. `cd` or `cd ~/`).
 
-Now, fire up **JupyterLab** and use the snippets to build new **cctbx** scripts. 
+Now, fire up **JupyterLab** (e.g. enter `jupyter lab`) and use the snippets to build new **cctbx** scripts. 
 
 ```bash
 jupyter lab
-
 ````
 
 
 [Return to Table of Contents](#table-of-contents)
 
+<a id="JupyterLab3)"><h2>Using the snippet library with **JupyterLab** >= 3.0</h2></a>
 
-JupyterLab can also use the **jupyterlab-snippets** extension to make the snippets available via a **snippets** pull-down menu.
-This package can be installed by conda, pip, or by the extension manager in Jupyter Lab.
+**JupyterLab** can also use the **jupyterlab-snippets** extension to make the snippets available via a **snippets** pull-down menu rather than separate pulldown menus for each snippet library as provided by **jupyterlab-snippets-multimenus**.
+This package can be installed by **conda**, **pip**, or by using the extension manager in **JupyterLab**.
 
-Assuming that **JupyterLab**, **jupyterlab-snippets**, and PyMOL are already installed, run the following commands one line at a time:
+Assuming that **JupyterLab**, **jupyterlab-snippets**, and **PyMOL** are already installed, run the following commands one line at a time:
 
 ```bash
 jupyter --path
@@ -208,13 +214,13 @@ git clone https://github.com/MooersLab/jupyterlabcctbxsnipsplus.git pymol+
 When you open **JupyterLab**, you will find a **snippet** pull-down menu on the JupyterLab menu-bar.
 There will be a **cctbx** sub-menu and a **cctbx+** sub-menu under this pull-down.
 
-JupyterLab needs to be version >=2.2.0 for **jupyterlab-snippets** to run. 
+**JupyterLab** needs to be version >=2.2.0 for **jupyterlab-snippets** to run. 
 The current version of **JupyterLab** is >3.0.
 
 **Node.js** can be downloaded from the developer's site, or it can be installed with a package manager.
 It needs to be more recent than version 10.0.0 
 
-Shortly, I will make available a new variant of the library that can run in JupyterLab. 
+Shortly, I will make available a new variant of the library that can be run in JupyterLab >=3.0 using an additional snippet manager. 
 
 <a id="configuration-setup"><h2>Configuration Setup</h2></a>
 
@@ -236,7 +242,7 @@ The animation at the top of the page conveys the essential knowledge for usage.
 ### Quick check of the installation
 
 
-To verify that **cctbx** can be called from a Jupyter Notebook.
+To verify that **cctbx** can be called from a Jupyter notebook.
 Launch JupyterLab and open a new notebook.
 Select the appropriate kernel.
 Enter in the first cell `from iotbx.map_model_manager import map_model_manager` and enter `Shift-Return`.
