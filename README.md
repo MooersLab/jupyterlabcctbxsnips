@@ -27,8 +27,8 @@ This libraries were designed to be used with the jupyter-multimenu-snippets pack
 
 * [Motivation](#motivation)
 * [Tech Stack](#technology-stack)
-* [Installation of the snippet library for **JupyterLab** >= 2.2](#JupyterLab2)
-* [Installation of the snippet library with **JupyterLab** >= 3.0](#JupyterLab3)
+* [Installation of the snippet library for **JupyterLab** >= 2.2](#jl2)
+* [Installation of the snippet library with **JupyterLab** >= 3.0](#jl3)
 * [Configuration Setup](#configuration-setup)
 * [Usage](#usage)
 * [Testing](#testing)
@@ -131,7 +131,7 @@ Multiple versions of **cctbx** can operate on a computer if they are in separate
 [Return to Table of Contents](#table-of-contents)
 
 
-<a id="JupyterLab2"><h2>Installation the snippet library for **JupyterLab** 2.0 with the jupyterlab-snippets-multimenus extension</h2></a>
+<a id="jl2"><h2>Installation the snippet library for **JupyterLab** 2.0 with the jupyterlab-snippets-multimenus extension</h2></a>
 
 Assuming that **git**, **JupyterLab**, **jupyterlab-snippets-multimenus**, and **cctbx** are already installed, run the following commands one line at a time.
 On the Mac, **git** is installed with the Command Line Tools.
