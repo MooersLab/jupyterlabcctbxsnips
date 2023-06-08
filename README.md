@@ -131,7 +131,7 @@ Multiple versions of **cctbx** can operate on a computer if they are in separate
 [Return to Table of Contents](#table-of-contents)
 
 
-<a id="JupyterLab2)"><h2>Installation the snippet library for **JupyterLab** 2.0 with the jupyterlab-snippets-multimenus extension</h2></a>
+<a id="JupyterLab2"><h2>Installation the snippet library for **JupyterLab** 2.0 with the jupyterlab-snippets-multimenus extension</h2></a>
 
 Assuming that **git**, **JupyterLab**, **jupyterlab-snippets-multimenus**, and **cctbx** are already installed, run the following commands one line at a time.
 On the Mac, **git** is installed with the Command Line Tools.
@@ -195,7 +195,7 @@ jupyter lab
 
 [Return to Table of Contents](#table-of-contents)
 
-<a id="JupyterLab3)"><h2>Using the snippet library with **JupyterLab** >= 3.0</h2></a>
+<a id="JupyterLab3"><h2>Using the snippet library with **JupyterLab** >= 3.0</h2></a>
 
 **JupyterLab** can also use the **jupyterlab-snippets** extension to make the snippets available via a **snippets** pull-down menu rather than separate pulldown menus for each snippet library as provided by **jupyterlab-snippets-multimenus**.
 This package can be installed by **conda**, **pip**, or by using the extension manager in **JupyterLab**.
