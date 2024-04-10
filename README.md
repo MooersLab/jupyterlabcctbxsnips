@@ -5,23 +5,23 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4429336.svg)](https://doi.org/10.5281/zenodo.4429336)
 
 The **cctbx** (<a href="https://github.com/cctbx/cctbx.github.io"> Computational Crystallography Toolbox </a>) is a core package for computational crystallography that has been developed over the past two decades that the Lawrence-Berkley National Laboratory.
-It contains the open source components of the <a href="https://phenix-online.org"> Phenix project</a>.
+It contains the open-source components of the <a href="https://phenix-online.org"> Phenix project</a>.
 It has C++ routines wrapped in Python to ease using it to develop new software tools for analyzing atomic coordinates and diffraction data.
-Because it is can be run with Python, it can also be run from Jupyter notebooks, the defacto computing platform for data science.
+Because it can be run with Python, it can also be run from Jupyter notebooks, the de facto computing platform for data science.
 To ease the running of **cctbx** in Jupyter notebooks, we developed the **jupyterlabcctbxsnips** of code templates.
-Access to the code templates or snippets requires the editing of the Jupyter notebook from inside of <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html"> **JupyterLab** </a>, a browser based IDE for Jupyter notebooks.
+Access to the code templates or snippets requires the editing of the Jupyter notebook from inside of <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html"> **JupyterLab** </a>, a browser-based IDE for Jupyter notebooks.
 This **JupyterLab** enables the writing or editing of a document in a pane next to the Jupyter notebook.
 This is useful for writing up documentation, protocols, tutorials, blog posts, and manuscripts next to the notebook that is being described.
-The document can be plain text, html, markdown, or LaTeX.
+The document can be plain text, HTML, markdown, or LaTeX.
 
 
 This readme file serves this GitHub site.
 There are three related sites:  <a href="https://github.com/MooersLab/jupyterlabcctbxsnipsplus">jupyterlabpymolpysnips</a>, and <a href="https://github.com/MooersLab/jupyterlabpymolpysnipsplus">jupyterlabpymolpysnipsplus</a>. 
 As you might have deduced, **PyMOL** and **cctbx** can be run together in the same Jupyter notebook. 
-This is best done when they share the same Python interpeter so they can be called from the same Jupyter environment.
+This is best done when they share the same Python interpreter so they can be called from the same Jupyter environment.
 See the associated GitHub Page for more information about running these two programs together and for list the snippet names and descriptions by <a class="tab" href="https://mooerslab.github.io/jupyterlabcctbxsnips/"> category.</a>
 The README.md contains the installation instructions for only the **jupyterlabcctbxsnips** and **jupyterlabcctbxsnipsplus** snippet libraries.
-This libraries were designed to be used with the jupyter-multimenu-snippets package for JupyterLab.
+These libraries were designed to be used with the jupyter-multimenu-snippets package for JupyterLab.
 
 <a id="table-of-contents"><h2>Table of Contents</h2></a>
 
@@ -76,7 +76,7 @@ A recent preprint about the ReciprocalSpaceship project can be found <a href="ht
 
 There are two advanced Matplotlib features in this plot.
 First, the imported `MultipleLocator` function enforced even distribution of the tick labels.
-Second, the imported `FunctionFormatter` added the commas to the thousandths place in the tick mark labels.
+Second, the imported `FunctionFormatter` added the commas to the thousandth place in the tick mark labels.
 
 
 [Return to Table of Contents](#table-of-contents)
@@ -106,7 +106,7 @@ This command will also install Python 3.8.
 **cctbx** also works with Python3.7 and Python 3.9, although PyMOL does not work with Python 3.9 yet.
 Note that the Anaconda Navigator does not support creation of new envs with Python 3.9 as of July 17, 2021, so you have to do so by the command line.
 
-Sometimes the planets are in alignment and you can install cctbx-base and pymol-bundle in the same environment.
+Sometimes, the planets are in alignment, and you can install cctbx-base and pymol-bundle in the same environment.
 This worked for me in January 2021, but by July 2021: there were too many dependency conflicts.
 In the latter case, install PyMOL in a separate conda env, make a Juptyer kernel for that env, and just switch kernels to use cells with PyMOL and other cells with **cctbx** in the same Jupyter notebook.
 
@@ -118,10 +118,10 @@ Note that **JupyterLab**>=3,0 no longer needs an external installation of **Node
 
 **Node.js** can be downloaded from the developer's site, or it can be installed with a package manager.
 It needs to be more recent than version 10.0.0.
-On some operating systems, **npm** is not installed automatically with **Node.js** and has to be installed too.
+On some operating systems, **npm** is not installed automatically with **Node.js** and must be installed separately.
 
 Some of the snippets are limited to Python3 code.
-If you are using a version of **cctbx** that relies on Python2, you can rewrite the snippet's code to be Python2 compliant.
+If you use a version of **cctbx** that relies on Python2, you can rewrite the snippet's code to be Python2 compliant.
 This often merely involves replacing  the print() functions in Python3 with print statements in Python2.
 The python script [**3to2**](https://pypi.org/project/3to2/) automates this process.
 Multiple versions of **cctbx** can operate on a computer if they are in separate environments, so you do not have to delete the Python2 version of **cctbx**.
@@ -136,11 +136,11 @@ Multiple versions of **cctbx** can operate on a computer if they are in separate
 Assuming that **git**, **JupyterLab**, **jupyterlab-snippets-multimenus**, and **cctbx** are already installed, run the following commands one line at a time.
 On the Mac, **git** is installed with the Command Line Tools.
 If you enter `git --version` in the terminal and do not get an error message, you have git installed.
-If you enter `ls /Library/Developer/CommandLineTools` and see `SDKs` as a subfolder, you have the commandline tools installed.
+If you enter `ls /Library/Developer/CommandLineTools` and see `SDKs` as a subfolder, you have the command line tools installed.
 
 Next, find the path to where the snippet library will be installed.
 Enter the following command to find the paths to the Jupyter libraries.
-There may be more than one path if you have several installation of Jupyter.
+There may be more than one path if you have several installations of Jupyter.
 
 ```bash
 jupyter --path
@@ -171,17 +171,17 @@ git clone https://github.com/MooersLab/jupyterlabcctbxsnipsplus.git cctbx+
 The snippets in the **cctbxsnips+** library have a second copy of the code in a comment with the tab stops.
 Tab stops are marked as follows `${1:default value}`.
 Tab stops are sites of parameter values that may need to be edited to customize the snippet.
-In most text editors, you hit tab to advance to the next tab stop.
+In most text editors, you hit the tab button to advance to the next tab stop.
 **JupyterLab** does not yet support tab stops.
 
 Use the **cctbx+** library when you need guidance in editing a snippet.
 The content of the active part of the snippet is the same in both libraries.
-The commented code in the **cctbx+** snip library may annoy experienced users who do not need help with editing and who do not want the extra comments in their code.
+The commented code in the **cctbx+** snip library may annoy experienced users who do not need editing help and do not want the extra comments in their code.
 
 As an alternative to using **git**, you can download the repository as a zip file by clicking on the green **code** button above.
 However, **git** eases the updating of the libraries at a later time.
 You would navigate to the `multimenus_snippets/cctbx` folder and then enter `git pull` to update the library.
-This is far less painful than down downloading the library via as a zip file.
+This is far less painful than downloading the library via as a zip file.
 Repeat for `cctbx+`, if needed.
 Important!
 Navigate back to your home directory before running **JupyterLab** (e.g. `cd` or `cd ~/`).
@@ -212,12 +212,12 @@ git clone https://github.com/MooersLab/jupyterlabcctbxsnipsplus.git pymol+
 ```
 
 When you open **JupyterLab**, you will find a **snippet** pull-down menu on the JupyterLab menu-bar.
-There will be a **cctbx** sub-menu and a **cctbx+** sub-menu under this pull-down.
+There will be a **cctbx** sub-menu and a **cctbx+** sub-menu under this pull-down menu.
 
 **JupyterLab** needs to be version >=2.2.0 for **jupyterlab-snippets** to run. 
 The current version of **JupyterLab** is >3.0.
 
-**Node.js** can be downloaded from the developer's site, or it can be installed with a package manager.
+**Node.js** can be downloaded from the developer's site or installed with a package manager.
 It needs to be more recent than version 10.0.0 
 
 Shortly, I will make available a new variant of the library that can be run in JupyterLab >=3.0 using an additional snippet manager. 
@@ -262,9 +262,9 @@ Otherwise, error messages will be printed in the terminal window.
 ### More extensive tests
 
 
-The **cctbx**installation in a conda environment can be tested by running the following bash script if installed with Python3.7 (use the next code block below if you installed cctbx-base with Python 3.8).
+The installation of **cctbx** in a conda environment can be tested by running the following bash script if installed with Python3.7 (use the next code block below if you installed cctbx-base with Python 3.8).
 
-Before doing the above, you should install pytest so that you can enable the running of additonal tests:
+Before doing the above, you should install *pytest* so that you can enable the running of additional tests:
 
 ```bash
 libtbx.python -m pip install pytest
@@ -325,8 +325,9 @@ libtbx.python $CONDA_PREFIX/lib/python3.8/site-packages/gltbx/run_tests.py
 Please use the **Issues tab** above to request support for additional snippets or to ask questions.
 Alternatively, you can send [e-mail](#contact-information) to me.
 
-Questions about **cctbx** should be searched in the [cctbx webpages](https://cctbx.github.io) and in the [archive of the cctbxbb](http://phenix-online.org/pipermail/cctbxbb/) and, if no answer is found, then directed to the [cctbxbb Mailing List](http://phenix-online.org/mailman/listinfo/cctbxbb). 
-Hint: there are numerous examples buried in the source code in folders labeled "examples".
+Questions about **cctbx** should be searched in the [cctbx webpages](https://cctbx.github.io) and in the [archive of the cctbxbb](http://phenix-online.org/pipermail/cctbxbb/).
+If no answer is found, then direct to the question to [cctbxbb Mailing List](http://phenix-online.org/mailman/listinfo/cctbxbb). 
+Hint: numerous examples are buried in the source code in the "examples" folders.
 
 
 [Return to Table of Contents](#table-of-contents)
@@ -338,7 +339,7 @@ Snippets of new code are most welcome. Send to [e-mail](#contact-information).
 
 - Submit the Python code in a plain text file.
 - Write the filenames and function names in camelCase.
-- Provide a description of what the code does in one to several sentences, an examples of usage, and any citations or links to further information.
+- Describe what the code does in one to several sentences, an example of usage, and any citations or links to further information.
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -352,7 +353,7 @@ Use the **Issues tab** above to report bugs or send [e-mail](#contact-informatio
 
 <a id="roadmap"><h2>Roadmap</h2></a>
 
-I plan to expand the library for more complete coverage of the available functions and methods.
+I plan to expand the library to fully cover the available functions and methods.
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -377,4 +378,6 @@ I can be reached via the Issue tab above or via e-mail: `blaine-mooers at ouhsc.
 If you use this library to prepare a publication, please cite the **cctbx** project and this site. See the *Citation.md* file above.
 
 [Return to Table of Contents](#table-of-contents)
+
+
 
