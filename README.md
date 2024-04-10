@@ -379,5 +379,16 @@ If you use this library to prepare a publication, please cite the **cctbx** proj
 
 [Return to Table of Contents](#table-of-contents)
 
+## Update History
+
+|Version      | Changes                                         | Date            |
+|:-----------:|:-----------------------------------------------:|:---------------:|
+| Version 0.3 |  Fixed typos in README.md                       | 2024 April 5    |
 
 
+## Sources of funding
+
+- NIH: R01 CA242845
+- NIH: R01 AI088011
+- NIH: P30 CA225520 (PI: R. Mannel)
+- NIH P20GM103640 and P30GM145423 (PI: A. West)
